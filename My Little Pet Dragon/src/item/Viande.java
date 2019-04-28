@@ -1,5 +1,5 @@
 package item;
 
-public class Viande {
+public class Viande extends Food{
 
 }
