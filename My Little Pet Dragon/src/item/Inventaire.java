@@ -8,7 +8,7 @@ public class Inventaire {
 	private Image imageFond;
 	private Image caseInventaire;
 	private Image imageContour;
-	
+	private boolean isAffiche;
 	public Inventaire(Image imageFond, Image caseInventaire, Image imageContour) {
 		super();
 		this.imageFond = imageFond;
@@ -16,5 +16,11 @@ public class Inventaire {
 		this.imageContour = imageContour;
 	}
 
-	
+	public void actualiser()
+	{
+		if(isAffiche)
+		{
+			imageFond.draw();
+		}
+	}
 }
