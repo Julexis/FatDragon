@@ -3,6 +3,10 @@ package item;
 public class Sceau extends Item{
 	private Boolean isFull;
 	
+	public Sceau()
+	{
+		setDestructable(true);
+	}
 	
 	public Boolean getIsFull() {
 		return isFull;

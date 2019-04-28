@@ -13,10 +13,3 @@ public class Legume extends Food{
 
 }
 
-enum vegieType
-{
-	applePie,
-	gingerale,
-	hotdog,
-	orange
-}

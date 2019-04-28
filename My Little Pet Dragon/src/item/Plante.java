@@ -2,10 +2,29 @@ package item;
 
 public class Plante extends Item{
 	private grainType type;
-	private int niveauDeCompletion;//peut être de 0 a 100
+	private int niveauDeCompletion;
 	
 	
-	
+	public Plante(grainType type)
+	{
+		this.type = type;
+		
+		switch(type)
+		{
+		case yellow:
+			niveauDeCompletion = 100;
+			break;
+		case blue:
+			niveauDeCompletion = 60;
+			break;
+		case red:
+			niveauDeCompletion = 75;
+			break;
+		case green:
+			niveauDeCompletion = 20;
+			break;
+		}
+	}
 	public grainType getType() {
 		return type;
 	}

@@ -1,13 +1,13 @@
 package item;
 
 public class Item {
-	private boolean isIndestructable = false;
+	private boolean isDestructable = true;
 	
-	public boolean isIndestructable() {
-		return isIndestructable;
+	public boolean isDestructable() {
+		return isDestructable;
 	}
 	
-	public void setIndestructable(boolean isIndestructable) {
-		this.isIndestructable = isIndestructable;
+	public void setDestructable(boolean isIndestructable) {
+		this.isDestructable = isIndestructable;
 	}
 }

@@ -3,7 +3,11 @@ package item;
 public class Graine extends Item{
 	private grainType type;
 	
-	
+	public Graine(grainType type)
+	{
+		this.type = type;
+		
+	}
 	
 	public grainType getType() {
 		return type;
@@ -12,13 +16,6 @@ public class Graine extends Item{
 	public void setType(grainType type) {
 		this.type = type;
 	}
-	
-}
 
-enum grainType
-{
-	yellow,//apple pie
-	blue,//gingerale
-	red,//hotdog
-	green//orange
+	
 }
