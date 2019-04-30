@@ -3,12 +3,12 @@
  <tileset firstgid="1" source="TS01_worldmap2.tsx"/>
  <layer id="1" name="bloquer" width="20" height="20">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAACq2U2wmAMAxFM4E6gTqBOok6ge0E6v5fNmCglsSmj8D5KeRwE0gNABjHJrCDvo7XFUPr/PNdHnehzzoaR8vQZfgwT+8YBCQv57vfbJKLGBU+mjPmIriM/u5jc2oy0oxUNX0psyIL47MVs5X4MBt3N75vSsi2Br2cT+vEbIfSF3OSywi93BsWt8sRvjeQ4sOMcwBmO+H/35F8uVXbh3uQ/vocHmUcN8JABgAA
+   H4sIAAAAAAAACq2UwQ2DMAxFPUHpBIUJoJO0nYAwAbD/qbaEJTf6xgmNpXeJlKdvS3YiosS8HT6Ea2W2g1SJ57TuyLEZ9sAXORfmxnSA+4lzdnyS58H0Dp4X+fYjm+dShgKf9hm5lDyjztDO/azPkozao1ZLX02vwhP4lobZ/vFJNrQ31jdWZHtlf5Gv1CnZ5kJf5FRXcv6iNyk0y4F+d6DGJxmnDMlm7x66O57varX2yRy8W3+FL7/VgudABgAA
   </data>
  </layer>
  <layer id="2" name="Marcher" width="20" height="20">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAACmNgIAw8CWBBKCYFDHbz8JlNqXno5g5W82BmwszzpKF5ngzkmY/PPGq5j1y/o6cZSs1DNpOa5uHyL7XiA5lPqpnEmEeKmQNlHikYl3mUYmrkX3QAAKrA9HpABgAA
+   H4sIAAAAAAAACmNgIAw8sWBKATYzKTEbn3mCVHarIBXMRDZ3sJoHM5NW5nmiiZMT9/jMo5b70M0mxSzkOKHUPGQzqWkeLv9SKz6Q+aSaSYx5pJg5UOaRgnGZRymmRrmNDgBCKYSIQAYAAA==
   </data>
  </layer>
 </map>
