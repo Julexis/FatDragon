@@ -7,15 +7,18 @@ import org.newdawn.slick.*;
 import org.newdawn.slick.tiled.TiledMap;
 
 import animal.Joueur;
-
+import ObjetsInteractif.MAPS;
 public class Jeu extends BasicGame {
 	
 	
-	private TiledMap map;
+	private TiledMap[] maps;
+	private TiledMap mapToRender;
 	private int indexCalque;
 	private Joueur joueur;
 	private Image imageJoueur;
 	private int tileSize;
+	private float maxY;
+	private float maxX;
 	public Jeu(String title) {
 		super(title);
 		
@@ -26,7 +29,7 @@ public class Jeu extends BasicGame {
 	@Override
 	public void render(GameContainer arg0, Graphics arg1) throws SlickException {
 		arg1.scale(3, 2.25f);
-		map.render(0, 0);
+		mapToRender.render(0, 0);
 		imageJoueur.draw(joueur.getEmplacementX()*tileSize,joueur.getEmplacementY()*tileSize,joueur.getSize(),joueur.getSize());
 		
 	}
@@ -34,14 +37,20 @@ public class Jeu extends BasicGame {
 	@Override
 	public void init(GameContainer arg0) throws SlickException {
 		this.joueur=new Joueur(5, 16, 0.2f, 25);
+		maps=new TiledMap[4];
 		try {
-			map = new TiledMap("./maps/MapCarte.tmx");
+			maps[MAPS.LAC.toInt()] = new TiledMap("./maps/CarteLac.tmx");
+			maps[MAPS.DRAGON.toInt()]=new TiledMap("./maps/AreaDragon.tmx");
+			maps[MAPS.FORET.toInt()]=new TiledMap("./maps/Foret.tmx");
 		} catch (Exception e) {
 			Logger.getLogger(Jeu.class.getName()).log(Level.SEVERE, null, e);
 		}
 		tileSize=20;
-		this.joueur.setMap(map);
-		this.joueur.setCalqueBloquer(map.getLayerIndex("bloquer"));
+		
+		mapToRender=maps[MAPS.LAC.toInt()];
+		changerMapJoueur(mapToRender);
+		maxY=arg0.getHeight();
+		maxX=arg0.getWidth();
 		imageJoueur=joueur.getImage();
 		
 		
@@ -52,8 +61,28 @@ public class Jeu extends BasicGame {
 	{
 		// TODO Auto-generated method stub
 		joueur.deplacement(arg0.getInput());
+		changementMap();
 		
 	}
 		
+	public void changementMap()
+	{
+		if(mapToRender==maps[MAPS.LAC.toInt()])
+		{
+			if(joueur.getEmplacementX()>=19)
+			{
+				joueur.setEmplacementX(0);
+				mapToRender=maps[MAPS.FORET.toInt()];
+				changerMapJoueur(mapToRender);
+				
+			}
+			//else if(joueur.getEmplacementY())
+		}
+	}
+	public void changerMapJoueur(TiledMap map)
+	{
+		joueur.setMap(map);
+		joueur.setCalqueBloquer(map.getLayerIndex("bloquer"));
+	}
 	}
 	
