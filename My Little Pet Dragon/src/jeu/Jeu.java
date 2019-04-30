@@ -19,6 +19,8 @@ public class Jeu extends BasicGame {
 	private int tileSize;
 	private float maxY;
 	private float maxX;
+	private int hauteur;
+	private int largeur;
 	public Jeu(String title) {
 		super(title);
 		
@@ -36,12 +38,14 @@ public class Jeu extends BasicGame {
 
 	@Override
 	public void init(GameContainer arg0) throws SlickException {
-		this.joueur=new Joueur(5, 16, 0.2f, 25);
+		this.joueur=new Joueur(5, 16, 0.2f, 16);
 		maps=new TiledMap[4];
 		try {
 			maps[MAPS.LAC.toInt()] = new TiledMap("./maps/CarteLac.tmx");
 			maps[MAPS.DRAGON.toInt()]=new TiledMap("./maps/AreaDragon.tmx");
 			maps[MAPS.FORET.toInt()]=new TiledMap("./maps/Foret.tmx");
+			maps[MAPS.JARDIN.toInt()]=new TiledMap("./maps/Jardin.tmx");
+			
 		} catch (Exception e) {
 			Logger.getLogger(Jeu.class.getName()).log(Level.SEVERE, null, e);
 		}
@@ -52,6 +56,8 @@ public class Jeu extends BasicGame {
 		maxY=arg0.getHeight();
 		maxX=arg0.getWidth();
 		imageJoueur=joueur.getImage();
+		hauteur = 20;
+		largeur = 20;
 		
 		
 	}
@@ -69,14 +75,63 @@ public class Jeu extends BasicGame {
 	{
 		if(mapToRender==maps[MAPS.LAC.toInt()])
 		{
-			if(joueur.getEmplacementX()>=19)
+			if(joueur.getEmplacementX()>= largeur-1)
 			{
-				joueur.setEmplacementX(0);
+				joueur.setEmplacementX(1);
+				mapToRender=maps[MAPS.FORET.toInt()];
+				changerMapJoueur(mapToRender);		
+			}
+			else if(joueur.getEmplacementY()>= 19)
+			{
+				joueur.setEmplacementY(0);
+				mapToRender=maps[MAPS.DRAGON.toInt()];
+				changerMapJoueur(mapToRender);
+			}
+		}
+		else if(mapToRender == maps[MAPS.DRAGON.toInt()])
+		{
+			if(joueur.getEmplacementY() < 0)
+			{
+				joueur.setEmplacementY(hauteur - 1);
+				mapToRender=maps[MAPS.LAC.toInt()];
+				changerMapJoueur(mapToRender);
+			}
+			else if(joueur.getEmplacementX() >=largeur-1)
+			{
+				joueur.setEmplacementX(1);
+				mapToRender=maps[MAPS.JARDIN.toInt()];
+				changerMapJoueur(mapToRender);
+			}
+		}
+		else if(mapToRender == maps[MAPS.FORET.toInt()])
+		{
+			if(joueur.getEmplacementY() >= 19)
+			{
+				joueur.setEmplacementY(1);
+				mapToRender=maps[MAPS.JARDIN.toInt()];
+				changerMapJoueur(mapToRender);
+			}
+			else if(joueur.getEmplacementX() <= 0.8f)
+			{
+				joueur.setEmplacementX(largeur - 1);
+				mapToRender=maps[MAPS.LAC.toInt()];
+				changerMapJoueur(mapToRender);
+			}
+		}
+		else if(mapToRender == maps[MAPS.JARDIN.toInt()])
+		{
+			if(joueur.getEmplacementY() <= 1)
+			{
+				joueur.setEmplacementY(hauteur - 1);
 				mapToRender=maps[MAPS.FORET.toInt()];
 				changerMapJoueur(mapToRender);
-				
 			}
-			//else if(joueur.getEmplacementY())
+			else if(joueur.getEmplacementX() < 1)
+			{
+				joueur.setEmplacementX(largeur-1);
+				mapToRender=maps[MAPS.DRAGON.toInt()];
+				changerMapJoueur(mapToRender);
+			}
 		}
 	}
 	public void changerMapJoueur(TiledMap map)
