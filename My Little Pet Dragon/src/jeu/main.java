@@ -4,8 +4,6 @@ import java.util.logging.Logger;
 
 import org.newdawn.slick.*;
 
-import animal.Joueur;
-
 
 public class main {
 
