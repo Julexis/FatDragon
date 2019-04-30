@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="20" tileheight="20" infinite="0" nextlayerid="3" nextobjectid="1">
+ <tileset firstgid="1" source="TS01_worldmap2.tsx"/>
+ <layer id="1" name="bloquer" width="20" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACq2U2wmAMAxFM4E6gTqBOok6ge0E6v5fNmCglsSmj8D5KeRwE0gNABjHJrCDvo7XFUPr/PNdHnehzzoaR8vQZfgwT+8YBCQv57vfbJKLGBU+mjPmIriM/u5jc2oy0oxUNX0psyIL47MVs5X4MBt3N75vSsi2Br2cT+vEbIfSF3OSywi93BsWt8sRvjeQ4sOMcwBmO+H/35F8uVXbh3uQ/vocHmUcN8JABgAA
+  </data>
+ </layer>
+ <layer id="2" name="Marcher" width="20" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACmNgIAw8CWBBKCYFDHbz8JlNqXno5g5W82BmwszzpKF5ngzkmY/PPGq5j1y/o6cZSs1DNpOa5uHyL7XiA5lPqpnEmEeKmQNlHikYl3mUYmrkX3QAAKrA9HpABgAA
+  </data>
+ </layer>
+</map>
