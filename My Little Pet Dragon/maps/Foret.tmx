@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="20" tileheight="20" infinite="0" nextlayerid="5" nextobjectid="1">
+ <tileset firstgid="1" source="TileSet1.tsx"/>
+ <layer id="3" name="bloquer" width="20" height="20" offsetx="0" offsety="0.333333">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACqWU4QmFMAyEs1k3UCd4OoG6/y8tGIjnXRt9B0FI6UeSq5nNbCaxfQzG2u2pQnIuxmixmIYzxisUa0myqn6CEXvP1tbiZXvE+a2CtXTutVSZ2B/y/pHywL2bxD3Vg+LFWSvmV148x7oK5NBbP1O8TH1M0bc3b1LxMqqe4WzfzjuymF+9ebNcZHkwXoGvEvtvVX0ZIS/6lem3x4vK1Kf2iu/20e579QDulOKFQAYAAA==
+  </data>
+ </layer>
+ <layer id="4" name="marcher" width="20" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACr2UQQqAQAwD9wv7LP//IU9CCNN0K2IhB106pjW61j+1Tc+9CzRlPZowlEUeVLvsnvN0/o7jLN/fqT/leB/tr/OYfCUeZcB5/lzi6Qz0zhOvYiZel4Uq03S+7Lzzl/ZI3t7MW/Em8tlo3inL+/Va903/lZRh4hErZfbE39e8E49elMfum+z8ad1ExpuBQAYAAA==
+  </data>
+ </layer>
+</map>
