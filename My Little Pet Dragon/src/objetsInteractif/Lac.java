@@ -1,6 +1,7 @@
 package objetsInteractif;
 
 import java.util.ArrayList;
+import Interaction.*;
 
 public class Lac extends ObjetInteractif {
 

@@ -1,6 +1,7 @@
 package objetsInteractif;
 
 import java.util.ArrayList;
+import Interaction.*;
 
 import item.*;
 
@@ -15,11 +16,11 @@ public class Jardin extends ObjetInteractif{
 		listePlante.add(p);
 	}
 	
-	public Plante harvest(int index)
+	public Legume harvest(int index)
 	{
-		Plante output = listePlante.get(index);
+		Legume output = new Legume(listePlante.get(index).getType());
 		
-		listePlante.remove(index);
+		
 		
 		return output;
 	}

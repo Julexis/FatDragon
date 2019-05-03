@@ -1,15 +1,14 @@
-package objetsInteractif;
+package Interaction;
 
 import item.*;
+import objetsInteractif.*;
 
 public class NourrirDragon extends Interaction{
 	
-	private Dragon drag;
 	
 	public NourrirDragon(ObjetInteractif o)
 	{
 		super(o);
-		drag = (Dragon) o;
 	}
 	
 	@Override
@@ -17,6 +16,8 @@ public class NourrirDragon extends Interaction{
 	{
 		try
 		{
+			Dragon drag = (Dragon)structure;
+			
 			Food f = (Food) i;
 			drag.feedDragon(f);
 		}
@@ -24,5 +25,11 @@ public class NourrirDragon extends Interaction{
 		{
 			//todo code pour les item i non-food
 		}
+	}
+	
+	@Override
+	public String getMessage()
+	{
+		return "Nourrir le dragon.";
 	}
 }

@@ -1,15 +1,14 @@
-package objetsInteractif;
+package Interaction;
 
 import item.*;
+import objetsInteractif.*;
 
 public class RemplirSceau extends Interaction{
 	
-	private Lac bodyOfWater;
 	
 	public RemplirSceau(ObjetInteractif o)
 	{
 		super(o);
-		bodyOfWater = (Lac) o;
 	}
 	
 	@Override
@@ -24,5 +23,11 @@ public class RemplirSceau extends Interaction{
 		{
 			//todo: code pour un objet non-sceau
 		}
+	}
+	
+	@Override
+	public String getMessage()
+	{
+		return "Remplir un sceau.";
 	}
 }

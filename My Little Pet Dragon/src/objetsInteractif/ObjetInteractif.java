@@ -1,6 +1,7 @@
 package objetsInteractif;
 
 import java.util.ArrayList;
+import Interaction.*;
 
 public class ObjetInteractif {
 	protected ArrayList<Interaction> listeInteraction = new ArrayList<Interaction>();

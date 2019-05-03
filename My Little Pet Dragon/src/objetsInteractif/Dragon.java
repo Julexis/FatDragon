@@ -1,6 +1,7 @@
 package objetsInteractif;
 
 import item.*;
+import Interaction.*;
 
 public class Dragon extends ObjetInteractif {
 	private int hungerMeter = 100;//100 is full and 0 is dead
