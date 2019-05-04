@@ -67,12 +67,12 @@ public class Inventaire {
 	public void Affiche()
 	{
 		imageFond.draw(emplacementXimageFond,emplacementYimageFond,sizeImageFond ,sizeImageFond);
-		imageContour.draw(emplacementXimageFond+70*selectionX,emplacementYimageFond+70*selectionY,sizeContourCase,sizeContourCase);
+		imageContour.draw(5+emplacementXimageFond+65*selectionX,5+emplacementYimageFond+65*selectionY,sizeContourCase,sizeContourCase);
 		for (int i=0;i<3;i++)
 		{
 			for(int j=0;j<3;j++)
 			{
-				caseInventaire.draw((emplacementXimageFond+70*i)+5,(emplacementYimageFond+70*j)+5,sizeCaseInventaire,sizeCaseInventaire);
+				caseInventaire.draw((emplacementXimageFond+65*i)+10,(emplacementYimageFond+65*j)+10,sizeCaseInventaire,sizeCaseInventaire);
 			}
 		}
 		
