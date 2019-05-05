@@ -1,7 +1,8 @@
 package Interaction;
 
+import ObjetsInteractif.Dragon;
+import ObjetsInteractif.ObjetInteractif;
 import item.Item;
-import ObjetsInteractif.*;
 
 public class JouerAvecDragon extends Interaction{
 
