@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="20" tileheight="20" infinite="0" nextlayerid="3" nextobjectid="1">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="20" tileheight="20" infinite="0" nextlayerid="4" nextobjectid="1">
  <tileset firstgid="1" source="TS01_worldmap2.tsx"/>
+ <layer id="3" name="interagir" width="20" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACmNgGAUgII8HU9s8Us0lxixizSPWLGLNHMzmkWoWtc2jp19JNY9YQG3ziDWTVEDNvEsL84YrAACKJ6B8QAYAAA==
+  </data>
+ </layer>
  <layer id="1" name="bloquer" width="20" height="20">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAACq2UwQ2DMAxFPUHpBIUJoJO0nYAwAbD/qbaEJTf6xgmNpXeJlKdvS3YiosS8HT6Ea2W2g1SJ57TuyLEZ9sAXORfmxnSA+4lzdnyS58H0Dp4X+fYjm+dShgKf9hm5lDyjztDO/azPkozao1ZLX02vwhP4lobZ/vFJNrQ31jdWZHtlf5Gv1CnZ5kJf5FRXcv6iNyk0y4F+d6DGJxmnDMlm7x66O57varX2yRy8W3+FL7/VgudABgAA
+   H4sIAAAAAAAACrXUSw6AIAwE0J5QPQHlBOL9V2IiSRet/TrJLHkBUkAAwNld6AF8ztnxFp2VTGprxiC9FE8zu2E9lyZ4lv1YvajFeT1hPVl36Ll3Ldkz/u31Qivrce8m6m3C2qjXCr01txUefQMVHv33uDnzelqqva+/PtIbqTs3EUAGAAA=
   </data>
  </layer>
  <layer id="2" name="Marcher" width="20" height="20">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAACmNgIAw8sWBKATYzKTEbn3mCVHarIBXMRDZ3sJoHM5NW5nmiiZMT9/jMo5b70M0mxSzkOKHUPGQzqWkeLv9SKz6Q+aSaSYx5pJg5UOaRgnGZRymmRrmNDgBCKYSIQAYAAA==
+   H4sIAAAAAAAACq3UwQ2AIAwF0E6AuoAwgbKG+y+kHJpgaWmb0uQnXnz5FCOAPg+T6HBmxJ55h+H99GVjsgueZuZJqKt5SfFaitGzWBjsOPOsVt8Rvf6usfu50POctaUKHj57umUYv5mIV8meOO9yeP2epPN6TM2zmhX+Y/GkXRYYx+q1jjcJ7ebxPJG8aFb8t+m8O9mDSEAGAAA=
   </data>
  </layer>
 </map>

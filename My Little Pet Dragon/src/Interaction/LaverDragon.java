@@ -1,7 +1,7 @@
 package Interaction;
 
-import item.*;
 import ObjetsInteractif.*;
+import item.*;
 
 public class LaverDragon extends Interaction{
 

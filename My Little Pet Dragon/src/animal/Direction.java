@@ -1,4 +1,4 @@
-package ObjetsInteractif;
+package animal;
 
 public enum Direction {
 

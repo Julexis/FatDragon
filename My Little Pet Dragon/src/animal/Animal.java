@@ -5,7 +5,6 @@ package animal;
 import org.newdawn.slick.*;
 
 import org.newdawn.slick.tiled.TiledMap;
-import ObjetsInteractif.*;
 public class Animal {
 	
 	private TiledMap map;
