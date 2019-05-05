@@ -32,8 +32,8 @@ public class Jeu extends BasicGame {
 	public void render(GameContainer arg0, Graphics arg1) throws SlickException {
 		arg1.scale(3, 2.25f);
 		mapToRender.render(0, 0);
-		imageJoueur.draw(joueur.getEmplacementX()*tileSize,joueur.getEmplacementY()*tileSize,joueur.getSize(),joueur.getSize());
-		
+		joueur.drawMouvement();
+		joueur.drawInvent();
 	}
 
 	@Override
@@ -66,7 +66,7 @@ public class Jeu extends BasicGame {
 	public void update(GameContainer arg0, int delta) throws SlickException
 	{
 		// TODO Auto-generated method stub
-		joueur.deplacement(arg0.getInput());
+		joueur.InputJoueur(arg0.getInput());
 		changementMap();
 		
 	}
