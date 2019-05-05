@@ -1,7 +1,7 @@
 package Interaction;
 
 import item.*;
-import objetsInteractif.*;
+import ObjetsInteractif.*;
 
 public class NourrirDragon extends Interaction{
 	
