@@ -1,7 +1,7 @@
 package Interaction;
 
 import item.Item;
-import objetsInteractif.*;
+import ObjetsInteractif.*;
 
 public class Interaction {
 	protected ObjetInteractif structure;
