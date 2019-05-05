@@ -4,7 +4,6 @@ import org.newdawn.slick.*;
 import org.newdawn.slick.tiled.TiledMap;
 
 import item.Inventaire;
-import ObjetsInteractif.Direction;
 public class Joueur extends Animal{
 	
 	
