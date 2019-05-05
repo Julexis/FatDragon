@@ -6,8 +6,8 @@ import java.util.logging.Logger;
 import org.newdawn.slick.*;
 import org.newdawn.slick.tiled.TiledMap;
 
-import animal.Joueur;
 import ObjetsInteractif.MAPS;
+import animal.Joueur;
 public class Jeu extends BasicGame {
 	
 	
