@@ -7,7 +7,7 @@ public class Lac extends ObjetInteractif {
 
 	public Lac()
 	{
-		NourrirDragon i = new NourrirDragon(this);
+		RemplirSceau i = new RemplirSceau(this);
 		
 		listeInteraction.add(i);
 	}
