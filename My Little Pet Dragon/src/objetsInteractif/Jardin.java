@@ -9,6 +9,12 @@ public class Jardin extends ObjetInteractif{
 	
 	private ArrayList<Plante> listePlante = new ArrayList<Plante>();
 
+	public Jardin()
+	{
+		Interaction i = new PlanterGraine(this);
+		//Interaction i = new Cueillir(this);
+		listeInteraction.add(i);
+	}
 	
 	public void putGraine(Graine g)
 	{

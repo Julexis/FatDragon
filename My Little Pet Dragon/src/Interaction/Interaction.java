@@ -15,6 +15,6 @@ public class Interaction {
 	
 	public String getMessage()
 	{
-		return "I'm a regular interraction. Try me!";
+		return "I'm a regular interaction. Try me!";
 	}
 }
