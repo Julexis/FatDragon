@@ -1,4 +1,4 @@
-package objetsInteractif;
+package ObjetsInteractif;
 
 import java.util.ArrayList;
 import Interaction.*;

@@ -1,4 +1,4 @@
-package objetsInteractif;
+package ObjetsInteractif;
 
 import item.*;
 import Interaction.*;
