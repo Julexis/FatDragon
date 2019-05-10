@@ -27,7 +27,7 @@ public class Dragon extends ObjetInteractif {
 	private TimerEvent timerEvent;
 	private final int maxHeight = 200;
 	private Joueur joueur;
-
+	private Inventaire inventJoueur;
 
 	private boolean isDead = false;
 	private boolean isDeadSad = false;
@@ -42,7 +42,7 @@ public class Dragon extends ObjetInteractif {
 		listeInteraction.add(new NourrirDragon(this));
 		listeInteraction.add(new JouerAvecDragon(this));
 		listeInteraction.add(new LaverDragon(this));
-
+		inventJoueur=joueur.getInvent();
 		try {
 			imageDragon=new Image("./images/dragon.png");
 			bars[progressBar.BLEU.getBar()]=new Image("./imageBar/blue.png");
@@ -57,6 +57,14 @@ public class Dragon extends ObjetInteractif {
 		fonty = new TrueTypeFont( awtFont, false);
 		this.joueur = joueur;
 
+	}
+
+	public Inventaire getInventJoueur() {
+		return inventJoueur;
+	}
+
+	public void setInventJoueur(Inventaire inventJoueur) {
+		this.inventJoueur = inventJoueur;
 	}
 
 	public boolean growDragon()

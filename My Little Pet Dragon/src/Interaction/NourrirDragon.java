@@ -22,6 +22,7 @@ public class NourrirDragon extends Interaction{
 			{
 				
 				dragon.feedDragon(f);
+				dragon.getInventJoueur().suppress();
 			}
 			
 		} catch(Exception e)

@@ -45,16 +45,17 @@ public class Jeu extends BasicGame {
 		//On affiche la map actuelle
 		mapToRender.render(0, 0);
 		//On affiche le joueur, l'inventaire et les options
+		if(mapToRender==maps[MAPS.DRAGON.toInt()])
+		{
+			drakeDrake.drawDragon();
+		}
 		joueur.drawMouvement();
 		joueur.drawInvent();
 		if(joueur.getListeInteractionEnCours()!=null)
 		{
 		joueur.drawOptions();
 		}
-		if(mapToRender==maps[MAPS.DRAGON.toInt()])
-		{
-			drakeDrake.drawDragon();
-		}
+		
 		if(mapToRender==maps[MAPS.JARDIN.toInt()])
 		{
 			if(joueur.getInvent().isAffiche())

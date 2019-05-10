@@ -68,6 +68,10 @@ public class Inventaire {
 			items.add(i);
 		}
 	}
+	public void suppress()
+	{
+		items.remove(selectionX+selectionY*line);
+	}
 	public int getEmplacementYimageFond() {
 		return emplacementYimageFond;
 	}
