@@ -2,7 +2,7 @@ package ObjetsInteractif;
 
 public enum progressBar {
 	   JAUNE(0),
-	    VERT(1),
+	    BLEU(1),
 	    ROUGE(2);
 
 	    private int bar = 0;
