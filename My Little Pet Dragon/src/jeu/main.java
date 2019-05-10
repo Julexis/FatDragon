@@ -7,13 +7,10 @@ import org.newdawn.slick.*;
 
 public class main {
 
-	public  main()
-	{
-		
-	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-			
+			//Lancement du jeu principal qui fait 1200 par 900
 		int largeurAffichage = 1200;
 		int hauteurAffichage = 900;
 		boolean siPleinEcran = false;

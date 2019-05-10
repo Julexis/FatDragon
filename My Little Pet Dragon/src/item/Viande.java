@@ -8,7 +8,7 @@ public class Viande extends Food{
 	public Viande ()
 	{
 		try {
-			setImage(new Image("./imagesItem/viande"));
+			setImage(new Image("./imagesItem/viande.png"));
 		} catch (SlickException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

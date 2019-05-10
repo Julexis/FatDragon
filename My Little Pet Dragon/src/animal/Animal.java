@@ -17,6 +17,7 @@ public class Animal {
 	protected Animation animUp,animDown,animRight,animLeft;
 	protected Direction direction;
 	protected boolean moving;
+	//Initialisation d'animal
 	public Animal( float emplacementX, float emplacementY,  float deplacement, float size,Image image)
 	{
 		this.emplacementX = emplacementX;
@@ -24,6 +25,7 @@ public class Animal {
 		this.deplacement = deplacement;
 		this.size = size;
 		this.image=image;
+		//Création des animation
 		animUp=getAnimation(3);
 		animDown=getAnimation(0);
 		animRight=getAnimation(2);
@@ -31,7 +33,7 @@ public class Animal {
 		direction=Direction.UP;
 		
 	}
-
+//Getter et setter
 	public float getSize() {
 		return size;
 	}
@@ -79,18 +81,23 @@ public class Animal {
 	public void setDeplacement(float deplacement) {
 		this.deplacement = deplacement;
 	}
-	public void draw()
-	{
-		this.image.draw(emplacementX, emplacementY,size,size);
-	}
-
+	
 	public Image getImage() {
 		return image;
 	}
-
+	
+	public Direction getDirection() {
+		return direction;
+	}
+	
+	public void setDirection(Direction direction) {
+		this.direction = direction;
+	}
+	
 	public void setImage(Image image) {
 		this.image = image;
 	}
+	//Fonction de création de l'animation de l'animal
 	private Animation getAnimation(int rowY)
 	{
 		int x,y,width, height;
@@ -108,22 +115,16 @@ public class Animal {
 		return anim;
 	}
 	
-	public Direction getDirection() {
-		return direction;
-	}
-
-	public void setDirection(Direction direction) {
-		this.direction = direction;
-	}
-
+	//Fonction d'affichage du personnage se basant sur la direction
 	public void drawMouvement()
 	{
+		//Si le personnage bouge, il est animé
 		if(moving)
 		{
-		switch (direction) 
-		 {
+			switch (direction) 
+		 	{
 	         case UP:
-	             animUp.draw(emplacementX*20, emplacementY*20,size,size*1.5f);
+	            animUp.draw(emplacementX*20, emplacementY*20,size,size*1.5f);
 	            animUp.update(20);
 	             break;
 	         case DOWN:
@@ -138,9 +139,10 @@ public class Animal {
 	             animLeft.draw(emplacementX*20, emplacementY*20,size,size*1.5f);
 	             animLeft.update(20);
 	             break;
-	     }	
+		 	}	
 		
 		}
+		//Si il ne bouge pas, son image d'inaction est utilisé
 		else
 		{
 			switch (direction) 
