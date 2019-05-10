@@ -1,31 +1,22 @@
 package Interaction;
 
 import ObjetsInteractif.Dragon;
-import ObjetsInteractif.ObjetInteractif;
 import item.Item;
 
 public class JouerAvecDragon extends Interaction{
 
+	Dragon dragon;
 	
-	public JouerAvecDragon(ObjetInteractif o)
+	public JouerAvecDragon(Dragon o)
 	{
-		super(o);
+		dragon = o;
 	}
 	
 	@Override
 	public void run(Item i)
 	{
-		try
-		{
-			Dragon drag = (Dragon)structure;
-			
-			drag.playWithDragon();
-			
-		}
-		catch(Exception e)
-		{
-			//here
-		}
+		dragon.playWithDragon();
+		
 	}
 	
 	@Override
