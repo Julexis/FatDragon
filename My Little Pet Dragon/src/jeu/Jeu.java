@@ -50,7 +50,7 @@ public class Jeu extends BasicGame {
 		//Création des objet à intéragir
 		drakeDrake=new Dragon();
 		lakeLake=new Lac();
-		jardinGarden=new Jardin();
+		jardinGarden=new Jardin(joueur.getInvent());
 		//Tablea des 4 maps
 		maps=new TiledMap[4];
 		try {
