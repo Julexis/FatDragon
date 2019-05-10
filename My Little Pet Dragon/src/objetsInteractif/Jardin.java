@@ -1,14 +1,22 @@
 package ObjetsInteractif;
 
 import java.util.ArrayList;
+import item.Inventaire;
 import Interaction.*;
 
 import item.*;
 
 public class Jardin extends ObjetInteractif{
 	
+	Inventaire inventaireJoueur;
 	private ArrayList<Plante> listePlante = new ArrayList<Plante>();
 
+	public Jardin(Inventaire i)
+	{
+		inventaireJoueur = i;
+		listeInteraction.add(new PlanterGraine(this));
+		listeInteraction.add(new RecolterLegume(this));
+	}
 	
 	public void putGraine(Graine g)
 	{
@@ -16,13 +24,11 @@ public class Jardin extends ObjetInteractif{
 		listePlante.add(p);
 	}
 	
-	public Legume harvest(int index)
+	public void harvest(Plante p)
 	{
-		Legume output = new Legume(listePlante.get(index).getType());
-		
-		
-		
-		return output;
+		listePlante.remove(p);
+		Legume l = new Legume(p.getType());
+		//inventaireJoueur.addStuff();
 	}
 	
 	public ArrayList<Plante> getListePlante() {
