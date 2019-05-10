@@ -5,25 +5,17 @@ import item.*;
 
 public class LaverDragon extends Interaction{
 
+	Dragon dragon;
 	
-	public LaverDragon(ObjetInteractif o)
+	public LaverDragon(Dragon o)
 	{
-		super(o);
+		dragon = o;
 	}
 	
 	@Override
 	public void run(Item i)
 	{
-		try
-		{
-			Dragon drag = (Dragon)structure;
-			
-			drag.playWithDragon();
-		}
-		catch (Exception e)
-		{
-			//here
-		}
+		dragon.playWithDragon();
 	}
 	
 	@Override
