@@ -10,34 +10,37 @@ public class Legume extends Food{
 	{
 		
 		try {
-			vegieType v = vegieType.applePie;
-			setImage(new Image ("./imagesItem/applePie.png"));
-		switch(t)
-		{
-		case blue:
-			v = vegieType.gingerale;
-			setImage(new Image ("./imagesItem/gingerAle.png"));
-			break;
-		case red:
-			v = vegieType.hotdog;
-			setImage(new Image ("./imagesItem/hotdog.png"));
-			break;
-		case green:
-			v = vegieType.orange;
-			setImage(new Image ("./imagesItem/orange.png"));
-		
-			break;
-		}
-		type = v;
+			switch(t)//Initialise le legume en fonction de la sorte de grain
+			{
+			case blue:
+				type = vegieType.gingerale;
+				setImage(new Image ("./imagesItem/gingerAle.png"));
+				this.setFoodValue(50);
+				break;
+			case red:
+				type = vegieType.hotdog;
+				setImage(new Image ("./imagesItem/hotdog.png"));
+				this.setFoodValue(45);
+				break;
+			case green:
+				type = vegieType.orange;
+				setImage(new Image ("./imagesItem/orange.png"));
+				this.setFoodValue(35);
+				break;
+			default:
+				type = vegieType.applePie;
+				setImage(new Image ("./imagesItem/applePie.png"));
+				this.setFoodValue(85);
+			}
 		}
 		catch (SlickException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	
-		
 	}
 	
+	
+	//getter setter
 	public vegieType getType() {
 		return type;
 	}
