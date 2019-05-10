@@ -15,7 +15,10 @@ public class JouerAvecDragon extends Interaction{
 	@Override
 	public void run(Item i)
 	{
-		dragon.playWithDragon();
+		/*if (!dagon.IsDeadDirty())
+		{
+			dragon.playWithDragon();
+		}*/
 		
 	}
 	
