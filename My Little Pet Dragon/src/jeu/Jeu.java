@@ -171,13 +171,16 @@ public class Jeu extends BasicGame {
 				joueur.setEmplacementY(hauteur - 1);
 				mapToRender=maps[MAPS.FORET.toInt()];
 				changerMapJoueur(mapToRender);
-				
+				joueur.setInJardin(false);
+				joueur.resetInvent();
 			}
 			else if(joueur.getEmplacementX() <=0.5f)
 			{
 				joueur.setEmplacementX(largeur-1);
 				mapToRender=maps[MAPS.DRAGON.toInt()];
 				changerMapJoueur(mapToRender);
+				joueur.setInJardin(false);
+				joueur.resetInvent();
 			}
 		}
 	}
@@ -198,6 +201,7 @@ public class Jeu extends BasicGame {
 		{
 			joueur.setListeInteractionEnCours(jardinGarden.getListeInteraction());
 			joueur.setObjetEnCours(jardinGarden);
+			joueur.setInJardin(true);
 		}
 			
 		else if(map==maps[MAPS.FORET.toInt()])

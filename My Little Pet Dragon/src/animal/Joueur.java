@@ -32,6 +32,9 @@ public class Joueur extends Animal{
 	private ObjetInteractif objetEnCours;
 	private ArrayList<Interaction> listeInteractionEnCours;
 	private boolean interactionAffiche,choixInteractionActive;
+	private boolean isInJardin;
+	
+
 	TrueTypeFont fonty;
 	//private textField
 	
@@ -172,60 +175,76 @@ public class Joueur extends Animal{
 	//On choisis on déplace l'index et empêche de sortir de ce dernier en fonction des input du joueur
 	public void choixIndex(Input inputJoueur)
 	{
-		Inventaire InventaireEnCours;
+		Inventaire inventaireEnCours;
 		if(invent.isSelect())
 		{
-			InventaireEnCours=invent;
+			inventaireEnCours=invent;
 		}
 		else
 		{
-			InventaireEnCours=inventJardin;
+			inventaireEnCours=inventJardin;
 		}
 		this.inputJoueur=inputJoueur;
 		if(this.inputJoueur.isKeyPressed(Input.KEY_RIGHT))
 		{
-			InventaireEnCours.setSelectionX(invent.getSelectionX()+1);
+			inventaireEnCours.setSelectionX(inventaireEnCours.getSelectionX()+1);
 		}
 		else if(this.inputJoueur.isKeyPressed(Input.KEY_LEFT))
 		{
 			
-			InventaireEnCours.setSelectionX(invent.getSelectionX()-1);
+			inventaireEnCours.setSelectionX(inventaireEnCours.getSelectionX()-1);
 
 		}
 		else if(this.inputJoueur.isKeyPressed(Input.KEY_UP))
 		{
-			InventaireEnCours.setSelectionY(invent.getSelectionY()-1);
+			inventaireEnCours.setSelectionY(inventaireEnCours.getSelectionY()-1);
 
 		}
 		else if(this.inputJoueur.isKeyPressed(Input.KEY_DOWN))
 		{
-			InventaireEnCours.setSelectionY(InventaireEnCours.getSelectionY()+1);
+			inventaireEnCours.setSelectionY(inventaireEnCours.getSelectionY()+1);
 
 		}
-		if(InventaireEnCours.getSelectionX()>InventaireEnCours.getLine()-1)
+		if(inventaireEnCours.getSelectionX()>inventaireEnCours.getLine()-1)
 		{
-			InventaireEnCours.setSelectionX(InventaireEnCours.getLine()-1);
+			if(inventaireEnCours==invent&&isInJardin)
+			{
+			inventJardin.setSelect(true);
+			invent.setSelect(false);
+			inventJardin.setSelectionY(invent.getSelectionY());
+			}
+			inventaireEnCours.setSelectionX(inventaireEnCours.getLine()-1);
 		}
-		if(InventaireEnCours.getSelectionY()>InventaireEnCours.getRow()-1)
+		
+		if(inventaireEnCours.getSelectionY()>inventaireEnCours.getRow()-1)
 		{
-			InventaireEnCours.setSelectionY(InventaireEnCours.getRow()-1);
+			inventaireEnCours.setSelectionY(inventaireEnCours.getRow()-1);
 		}
-		if(InventaireEnCours.getSelectionX()<0)
+		if(inventaireEnCours.getSelectionX()<0)
 		{
-			InventaireEnCours.setSelectionX(0);
+			if(inventaireEnCours==inventJardin&&isInJardin)
+			{
+			inventJardin.setSelect(false);
+			invent.setSelect(true);
+			invent.setSelectionY(inventJardin.getSelectionY());
+			}
+			inventaireEnCours.setSelectionX(0);
 		}
-		if(InventaireEnCours.getSelectionY()<0)
+		
+		if(inventaireEnCours.getSelectionY()<0)
 		{
-			InventaireEnCours.setSelectionY(0);
+			inventaireEnCours.setSelectionY(0);
 		}
+	}
+	public void resetInvent()
+	{
+		invent.setSelect(true);
+		inventJardin.setSelect(false);
 	}
 	public Inventaire getInvent() {
 		return invent;
 	}
-	public void afficheInventJardin()
-	{
-		
-	}
+	
 	//La fonction doit définir si le joueur est sur un emplacement permettant d'intéragir ou non (non utiliser)
 	public void updateOptionListe()
 	{
@@ -285,9 +304,18 @@ public class Joueur extends Animal{
 	}
 	public void appelleFonction()
 	{
-		if(invent.getItemSelect()!=null)
+		Inventaire inventaireEnCours;
+		if(invent.isSelect())
 		{
-		listeInteractionEnCours.get(optionChoisis).run(invent.getItemSelect());
+			inventaireEnCours=invent;
+		}
+		else
+		{
+			inventaireEnCours=inventJardin;
+		}
+		if(inventaireEnCours.getItemSelect()!=null)
+		{
+			listeInteractionEnCours.get(optionChoisis).run(inventaireEnCours.getItemSelect());
 		}
 		choixInteractionActive=false;
 	}
@@ -318,5 +346,11 @@ public ArrayList<Interaction> getListeInteractionEnCours() {
 	public void setObjetEnCours(ObjetInteractif objetEnCours) {
 		this.objetEnCours = objetEnCours;
 	}
+	public boolean isInJardin() {
+		return isInJardin;
+	}
 
+	public void setInJardin(boolean isInJardin) {
+		this.isInJardin = isInJardin;
+	}
 }
