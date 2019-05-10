@@ -28,13 +28,16 @@ public class Dragon extends ObjetInteractif {
 	public Dragon()
 	{
 		bars=new Image[3];
+		
 		listeInteraction.add(new NourrirDragon(this));
 		listeInteraction.add(new JouerAvecDragon(this));
 		listeInteraction.add(new LaverDragon(this));
 		
 		try {
-			imageDragon=new Image("./images/dragon.jpg");
-			
+			imageDragon=new Image("./images/dragon.png");
+			bars[progressBar.BLEU.getBar()]=new Image("./imageBar/blue.png");
+			bars[progressBar.JAUNE.getBar()]=new Image("./imageBar/yellow.png");
+			bars[progressBar.ROUGE.getBar()]=new Image("./imageBar/red.png");
 		} catch (SlickException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -138,6 +141,10 @@ public class Dragon extends ObjetInteractif {
 	{
 		cleanliness = maxCleanliness;
 		//Dragon is tout propre :)
+	}
+	public void drawDragon()
+	{
+		imageDragon.draw(200,200,height,height);
 	}
 	public void afficheBar(int y,int x,String text,int amount,Image image)
 	{
