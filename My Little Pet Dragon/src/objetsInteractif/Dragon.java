@@ -3,6 +3,7 @@ package ObjetsInteractif;
 import item.*;
 
 import org.newdawn.slick.Image;
+import org.newdawn.slick.SlickException;
 
 import Interaction.*;
 
@@ -13,7 +14,8 @@ public class Dragon extends ObjetInteractif {
 	private final int maxHappiness = 100;
 	private int cleanliness = 100;
 	private final int maxCleanliness = 100;
-	
+	Image imageDragon;
+	Image[] bars;
 	private int growRate = 10;
 	private int height = 30;
 	
@@ -25,9 +27,23 @@ public class Dragon extends ObjetInteractif {
 	
 	public Dragon()
 	{
+		bars=new Image[3];
+		
 		listeInteraction.add(new NourrirDragon(this));
 		listeInteraction.add(new JouerAvecDragon(this));
 		listeInteraction.add(new LaverDragon(this));
+		
+		try {
+			imageDragon=new Image("./images/dragon.png");
+			bars[progressBar.BLEU.getBar()]=new Image("./imageBar/blue.png");
+			bars[progressBar.JAUNE.getBar()]=new Image("./imageBar/yellow.png");
+			bars[progressBar.ROUGE.getBar()]=new Image("./imageBar/red.png");
+		} catch (SlickException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 	
 	public boolean growDragon()
@@ -125,6 +141,10 @@ public class Dragon extends ObjetInteractif {
 	{
 		cleanliness = maxCleanliness;
 		//Dragon is tout propre :)
+	}
+	public void drawDragon()
+	{
+		imageDragon.draw(200,200,height,height);
 	}
 	public void afficheBar(int y,int x,String text,int amount,Image image)
 	{

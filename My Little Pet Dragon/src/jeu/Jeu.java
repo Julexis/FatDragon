@@ -41,6 +41,10 @@ public class Jeu extends BasicGame {
 		{
 		joueur.drawOptions();
 		}
+		if(mapToRender==maps[MAPS.DRAGON.toInt()])
+		{
+		drakeDrake.drawDragon();
+		}
 	}
 
 	@Override
@@ -101,7 +105,7 @@ public class Jeu extends BasicGame {
 			}
 			else if(joueur.getEmplacementY()>= 19)
 			{
-				joueur.setEmplacementY(0);
+				joueur.setEmplacementY(1);
 				mapToRender=maps[MAPS.DRAGON.toInt()];
 				changerMapJoueur(mapToRender);
 			}
@@ -110,7 +114,7 @@ public class Jeu extends BasicGame {
 		{
 			if(joueur.getEmplacementY() < 0)
 			{
-				joueur.setEmplacementY(hauteur - 1);
+				joueur.setEmplacementY(hauteur - 1f);
 				mapToRender=maps[MAPS.LAC.toInt()];
 				changerMapJoueur(mapToRender);
 			}
@@ -140,14 +144,14 @@ public class Jeu extends BasicGame {
 		}
 		else if(mapToRender == maps[MAPS.JARDIN.toInt()])
 		{
-			if(joueur.getEmplacementY() <= 1)
+			if(joueur.getEmplacementY() <= 0.8f)
 			{
 				joueur.setEmplacementY(hauteur - 1);
 				mapToRender=maps[MAPS.FORET.toInt()];
 				changerMapJoueur(mapToRender);
 				
 			}
-			else if(joueur.getEmplacementX() < 1)
+			else if(joueur.getEmplacementX() <=0.5f)
 			{
 				joueur.setEmplacementX(largeur-1);
 				mapToRender=maps[MAPS.DRAGON.toInt()];
