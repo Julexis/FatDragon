@@ -3,6 +3,7 @@ package item;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
+//Plante qui pousse dans le jardin. Peuvent être récolter lorsque prête.
 public class Plante extends Item{
 	private grainType type;
 	private int niveauDeCompletion;
@@ -10,7 +11,7 @@ public class Plante extends Item{
 	
 	public Plante(grainType type)
 	{
-		this.type = type;
+		this.type = type;//set l'image en fonction de la sorte
 		try {
 			switch(type)
 			{

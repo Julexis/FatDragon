@@ -3,6 +3,7 @@ package item;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
+//Récolter dans le jardin. Peut être donner au dragon.
 public class Legume extends Food{
 	private vegieType type;
 	

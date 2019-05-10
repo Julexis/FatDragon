@@ -3,6 +3,7 @@ package item;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
+//nourriture "dropped" par les phacocheres
 public class Viande extends Food{
 	
 	public Viande ()

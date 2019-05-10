@@ -3,6 +3,7 @@ package item;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
+//Peut être remplit par le lac. Peut être utilisé pour laver le dragon.
 public class Sceau extends Item{
 	private Boolean isFull;
 	private Image imagePlein;
@@ -20,6 +21,8 @@ public class Sceau extends Item{
 		setImage(imageVide);
 	}
 	
+	
+	//getter setter
 	public Boolean getIsFull() {
 		return isFull;
 	}
