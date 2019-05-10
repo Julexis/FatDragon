@@ -1,18 +1,16 @@
 package Interaction;
 
 import item.Item;
-import ObjetsInteractif.*;
 
 public class Interaction {
-	protected ObjetInteractif structure;
 	
-	public Interaction(ObjetInteractif o)
-	{
-		structure = o;
-	}
 	
+	
+	
+	//method de l'activation de l'interraction
 	public void run(Item i){/*Surdéfinir*/}
 	
+	//message que le menu doit afficher
 	public String getMessage()
 	{
 		return "I'm a regular interraction. Try me!";
