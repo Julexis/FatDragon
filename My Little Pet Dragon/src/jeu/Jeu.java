@@ -10,15 +10,12 @@ import ObjetsInteractif.*;
 import animal.Joueur;
 public class Jeu extends BasicGame {
 	
-	
+	//Jeu principale
 	private TiledMap[] maps;
 	private TiledMap mapToRender;
 	private int indexCalque;
 	private Joueur joueur;
-	private Image imageJoueur;
 	private int tileSize;
-	private float maxY;
-	private float maxX;
 	private int hauteur;
 	private int largeur;
 	private Dragon drakeDrake;
@@ -33,19 +30,28 @@ public class Jeu extends BasicGame {
 	
 	@Override
 	public void render(GameContainer arg0, Graphics arg1) throws SlickException {
+		//Lors de l'affichage on scale la map et l'affichage pour être à l'échelle de la fenêtre
 		arg1.scale(3, 2.25f);
+		//On affiche la map actuelle
 		mapToRender.render(0, 0);
+		//On affiche le joueur, l'inventaire et les options
 		joueur.drawMouvement();
 		joueur.drawInvent();
+		if(joueur.getListeInteractionEnCours()!=null)
+		{
 		joueur.drawOptions();
+		}
 	}
 
 	@Override
 	public void init(GameContainer arg0) throws SlickException {
+		//Création du joueur
 		this.joueur=new Joueur(5, 16, 0.2f, 16);
+		//Création des objet à intéragir
 		drakeDrake=new Dragon();
 		lakeLake=new Lac();
 		jardinGarden=new Jardin();
+		//Tablea des 4 maps
 		maps=new TiledMap[4];
 		try {
 			maps[MAPS.LAC.toInt()] = new TiledMap("./maps/CarteLac.tmx");
@@ -56,17 +62,18 @@ public class Jeu extends BasicGame {
 		} catch (Exception e) {
 			Logger.getLogger(Jeu.class.getName()).log(Level.SEVERE, null, e);
 		}
+		//On affiche la taille d'une tile
 		tileSize=20;
-		
+		//La première map à afficher est la map Lac
 		mapToRender=maps[MAPS.LAC.toInt()];
+		//Le joueur est sur la map à afficher
 		changerMapJoueur(mapToRender);
-		maxY=arg0.getHeight();
-		maxX=arg0.getWidth();
-		imageJoueur=joueur.getImage();
+		//On met en place la hauteur et la largeur en tile
 		hauteur = 20;
 		largeur = 20;
-		
+		//L'objet en cours est lakelake pour le jouer
 		joueur.setObjetEnCours(lakeLake);
+		//On set la liste d'interaction pour le joueur (au lac) 
 		joueur.setListeInteractionEnCours(lakeLake.getListeInteraction());
 		
 	}
@@ -74,14 +81,16 @@ public class Jeu extends BasicGame {
 	@Override
 	public void update(GameContainer arg0, int delta) throws SlickException
 	{
-		// TODO Auto-generated method stub
+		//On sélection les input du joueur
 		joueur.InputJoueur(arg0.getInput());
+		//On vérifie si le joueur change de map
 		changementMap();
 		
 	}
 		
 	public void changementMap()
 	{
+		//Ici on vérifie les changement de map  et on effectue d'autre changement en conséquence
 		if(mapToRender==maps[MAPS.LAC.toInt()])
 		{
 			if(joueur.getEmplacementX()>= largeur-1)
@@ -148,7 +157,7 @@ public class Jeu extends BasicGame {
 	}
 	public void changerMapJoueur(TiledMap map)
 	{
-		
+	//Change la map du joueur, les interactions et les objets en cours	
 		if(map==maps[MAPS.DRAGON.toInt()])
 		{
 			joueur.setListeInteractionEnCours(drakeDrake.getListeInteraction());
@@ -165,7 +174,12 @@ public class Jeu extends BasicGame {
 			joueur.setObjetEnCours(jardinGarden);
 		}
 			
-		
+		else if(map==maps[MAPS.FORET.toInt()])
+		{
+			joueur.setListeInteractionEnCours(null);
+			joueur.setObjetEnCours(null);
+		}
+		joueur.setChoixInteractionActive(false);
 		joueur.setMap(map);
 		joueur.setCalqueBloquer(map.getLayerIndex("bloquer"));
 		joueur.setCalqueInteragir(map.getLayerIndex("interagir"));
