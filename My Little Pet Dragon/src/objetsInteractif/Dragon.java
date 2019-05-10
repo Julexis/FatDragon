@@ -49,6 +49,7 @@ public class Dragon extends ObjetInteractif {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		Font awtFont = new Font("Times New Roman", Font.BOLD, 10);
 		fonty = new TrueTypeFont( awtFont, false);
 		
@@ -152,7 +153,7 @@ public class Dragon extends ObjetInteractif {
 	}
 	public void drawDragon()
 	{
-		imageDragon.draw(200,200,height,height);
+		imageDragon.draw(150,150,height,height);
 	}
 	public void afficheLesBar()
 	{
