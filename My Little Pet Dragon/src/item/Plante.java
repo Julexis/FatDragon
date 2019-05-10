@@ -45,6 +45,14 @@ public class Plante extends Item{
 	public grainType getType() {
 		return type;
 	}
+	public int getCompletionMax() {
+		return completionMax;
+	}
+
+	public void setCompletionMax(int completionMax) {
+		this.completionMax = completionMax;
+	}
+
 	public void setType(grainType type) {
 		this.type = type;
 	}

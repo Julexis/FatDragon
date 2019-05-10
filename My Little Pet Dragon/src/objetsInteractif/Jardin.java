@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
-import item.Inventaire;
 import timer.TimerEvent;
 import timer.VieillirJardin;
 import Interaction.*;
@@ -71,7 +70,20 @@ public class Jardin extends ObjetInteractif{
 			}
 		}
 	}
-
+	public void afficherPlants()
+	{
+		 ArrayList <Item> plants=inventaireJardin.getItems();
+		 int x,y,hauteurLargeur;
+		 x=80;
+		 y=80;
+		 
+		 for(Item i :plants)
+		 {
+			 Plante p = (Plante)i;
+			 hauteurLargeur=p.getNiveauDeCompletion()/p.getCompletionMax();
+			p.getImage().draw(x,y,hauteurLargeur*20,hauteurLargeur*20);
+		 }
+	}
 	public Inventaire getInventaireJoueur() {
 		return inventaireJoueur;
 	}
