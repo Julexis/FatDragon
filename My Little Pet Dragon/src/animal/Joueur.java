@@ -172,42 +172,51 @@ public class Joueur extends Animal{
 	//On choisis on déplace l'index et empêche de sortir de ce dernier en fonction des input du joueur
 	public void choixIndex(Input inputJoueur)
 	{
+		Inventaire InventaireEnCours;
+		if(invent.isSelect())
+		{
+			InventaireEnCours=invent;
+		}
+		else
+		{
+			InventaireEnCours=inventJardin;
+		}
 		this.inputJoueur=inputJoueur;
 		if(this.inputJoueur.isKeyPressed(Input.KEY_RIGHT))
 		{
-			invent.setSelectionX(invent.getSelectionX()+1);
+			InventaireEnCours.setSelectionX(invent.getSelectionX()+1);
 		}
 		else if(this.inputJoueur.isKeyPressed(Input.KEY_LEFT))
 		{
 			
-			invent.setSelectionX(invent.getSelectionX()-1);
+			InventaireEnCours.setSelectionX(invent.getSelectionX()-1);
 
 		}
 		else if(this.inputJoueur.isKeyPressed(Input.KEY_UP))
 		{
-			invent.setSelectionY(invent.getSelectionY()-1);
+			InventaireEnCours.setSelectionY(invent.getSelectionY()-1);
 
 		}
 		else if(this.inputJoueur.isKeyPressed(Input.KEY_DOWN))
 		{
-			invent.setSelectionY(invent.getSelectionY()+1);
+			InventaireEnCours.setSelectionY(InventaireEnCours.getSelectionY()+1);
 
 		}
-		if(invent.getSelectionX()>invent.getLine()-1)
+		if(InventaireEnCours.getSelectionX()>InventaireEnCours.getLine()-1)
 		{
-			invent.setSelectionX(invent.getLine()-1);
+			InventaireEnCours.setSelectionX(InventaireEnCours.getLine()-1);
 		}
-		if(invent.getSelectionY()>invent.getRow()-1)
+		if(InventaireEnCours.getSelectionY()>InventaireEnCours.getRow()-1)
 		{
-			invent.setSelectionY(invent.getRow()-1);
+			InventaireEnCours.setSelectionY(InventaireEnCours.getRow()-1);
 		}
-		if(invent.getSelectionX()<0)
+		if(InventaireEnCours.getSelectionX()<0)
 		{
-			invent.setSelectionX(0);
+			InventaireEnCours.setSelectionX(0);
 		}
-		if(invent.getSelectionY()<0)
+		if(InventaireEnCours.getSelectionY()<0)
 		{
-			invent.setSelectionY(0);
+			InventaireEnCours.setSelectionY(0);
 		}
 	}
 	public Inventaire getInvent() {
