@@ -15,8 +15,10 @@ public class NourrirDragon extends Interaction{
 	@Override
 	public void run(Item i)
 	{
+		
 		Food f = (Food) i;
 		dragon.feedDragon(f);
+		
 	}
 	
 	@Override
