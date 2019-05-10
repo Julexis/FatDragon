@@ -3,16 +3,11 @@ package timer;
 import java.util.ArrayList;
 
 public class Timer {
-	static int tick;
-	static ArrayList<TimerEvent> eventListe;
+	static int tick = 0;
+	static ArrayList<TimerEvent> eventListe = new ArrayList<TimerEvent>();
 	
-	public Timer()
-	{
-		eventListe = new ArrayList<TimerEvent>();
-		tick = 0;
-	}
 	
-	public void increment()
+	public static void increment()
 	{
 		tick = (tick + 1) % 60;
 		
