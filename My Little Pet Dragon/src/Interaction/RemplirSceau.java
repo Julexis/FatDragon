@@ -1,15 +1,11 @@
 package Interaction;
 
 import item.*;
-import ObjetsInteractif.*;
 
 public class RemplirSceau extends Interaction{
 	
 	
-	public RemplirSceau(ObjetInteractif o)
-	{
-		super(o);
-	}
+	
 	
 	@Override
 	public void run(Item i)
@@ -28,6 +24,6 @@ public class RemplirSceau extends Interaction{
 	@Override
 	public String getMessage()
 	{
-		return "Remplir un sceau.";
+		return "Remplir un scio d'eau.";
 	}
 }
