@@ -27,6 +27,11 @@ public class Dragon extends ObjetInteractif {
 	
 	public Dragon()
 	{
+		bars=new Image[3];
+		listeInteraction.add(new NourrirDragon(this));
+		listeInteraction.add(new JouerAvecDragon(this));
+		listeInteraction.add(new LaverDragon(this));
+		
 		try {
 			imageDragon=new Image("./images/dragon.jpg");
 			
@@ -34,9 +39,6 @@ public class Dragon extends ObjetInteractif {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		listeInteraction.add(new NourrirDragon(this));
-		listeInteraction.add(new JouerAvecDragon(this));
-		listeInteraction.add(new LaverDragon(this));
 		
 		
 	}
