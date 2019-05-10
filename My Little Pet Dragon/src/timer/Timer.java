@@ -9,7 +9,7 @@ public class Timer {
 	
 	public static void increment()
 	{
-		tick = (tick + 1) % 60;
+		tick = (tick + 1) % 6;
 		
 		if (tick == 0)
 		{

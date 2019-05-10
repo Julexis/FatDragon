@@ -13,11 +13,11 @@ import org.newdawn.slick.TrueTypeFont;
 import Interaction.*;
 
 public class Dragon extends ObjetInteractif {
-	private int hungerMeter = 100;//100 is full and 0 is dead
+	private float hungerMeter = 100;//100 is full and 0 is dead
 	private final int maxHunger = 100;
-	private int happiness = 100;
+	private float happiness = 100;
 	private final int maxHappiness = 100;
-	private int cleanliness = 100;
+	private float cleanliness = 100;
 	private final int maxCleanliness = 100;
 	Image imageDragon;
 	Image[] bars;
@@ -84,9 +84,9 @@ public class Dragon extends ObjetInteractif {
 		}
 		
 		//Diminish hungerMeter
-		if (hungerMeter - 5 > 0)
+		if (hungerMeter - 0.2f > 0)
 		{
-			hungerMeter -= 5;
+			hungerMeter -= 0.2f;
 		}
 		else
 		{
@@ -95,9 +95,9 @@ public class Dragon extends ObjetInteractif {
 		}
 		
 		//Diminish happiness
-		if (happiness - 5 > 0)
+		if (happiness - 0.1f > 0)
 		{
-			happiness -= 5;
+			happiness -= 0.1f;
 		}
 		else
 		{
@@ -106,9 +106,9 @@ public class Dragon extends ObjetInteractif {
 		}
 		
 		//Diminish Cleanliness
-		if (cleanliness - 5 > 0)
+		if (cleanliness - 0.5f > 0)
 		{
-			cleanliness -= 5;
+			cleanliness -= 0.5f;
 		}
 		else
 		{
@@ -156,28 +156,28 @@ public class Dragon extends ObjetInteractif {
 	}
 	public void afficheLesBar()
 	{
-		afficheUneBar(40,10,"Faim :",hungerMeter,bars[progressBar.ROUGE.getBar()]);
-		afficheUneBar(40,30,"Propreté :",hungerMeter,bars[progressBar.BLEU.getBar()]);
-		afficheUneBar(40,50,"Bonheur :",hungerMeter,bars[progressBar.JAUNE.getBar()]);
+		afficheUneBar(60,10,"Faim :",hungerMeter,bars[progressBar.ROUGE.getBar()]);
+		afficheUneBar(60,30,"Propreté :",cleanliness,bars[progressBar.BLEU.getBar()]);
+		afficheUneBar(60,50,"Bonheur :",happiness,bars[progressBar.JAUNE.getBar()]);
 	}
-	public void afficheUneBar(int y,int x,String text,int amount,Image image)
+	public void afficheUneBar(int x,int y,String text,float amount,Image image)
 	{
 		fonty.drawString(10, y, text);
 		image.draw(x, y,amount,10);
 	}
-	public int getHunger() {
+	public float getHunger() {
 		return hungerMeter;
 	}
 	public void setHunger(int hunger) {
 		this.hungerMeter = hunger;
 	}
-	public int getHappiness() {
+	public float getHappiness() {
 		return happiness;
 	}
 	public void setHappiness(int happiness) {
 		this.happiness = happiness;
 	}
-	public int getCleanliness() {
+	public float getCleanliness() {
 		return cleanliness;
 	}
 	public void setCleanliness(int cleanliness) {
