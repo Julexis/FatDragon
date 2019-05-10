@@ -109,7 +109,16 @@ public class Inventaire {
 	}
 	public Item getItemSelect()
 	{
-		return items.get(selectionX+selectionY*line);
+		Item itemToReturn;
+		if(selectionX+selectionY*line>items.size())
+		{
+			itemToReturn=null;
+		}
+		else
+		{
+			itemToReturn=items.get(selectionX+selectionY*line);
+		}
+		return itemToReturn;
 	}
 	public void Affiche()
 	{
