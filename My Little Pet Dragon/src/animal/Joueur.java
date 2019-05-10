@@ -31,7 +31,7 @@ public class Joueur extends Animal{
 		
 		//Création de l'inventaire dans Joueur
 		this.setCalqueInteragir(calqueInteragir);
-		invent=new Inventaire(new Image("./ressourceJeu/fondInventaire.png"),new Image("./ressourceJeu/case.png"),new Image("./ressourceJeu/caseContour.png"),3,3,110,100);
+		invent=new Inventaire(new Image("./ressourceJeu/fondInventaire.png"),new Image("./ressourceJeu/case.png"),new Image("./ressourceJeu/caseContour.png"),3,3,140,100);
 		invent.setSelectionX(0);
 		invent.setSelectionY(0);
 		choixInteractionActive=false;
@@ -220,7 +220,7 @@ public class Joueur extends Animal{
 	{
 		if(invent.isAffiche())
 		{
-			invent.getImageFond().draw(10,invent.getEmplacementYimageFond(),90,100);
+			invent.getImageFond().draw(10,invent.getEmplacementYimageFond(),120,100);
 			int y=20;
 			int valeurI=0;
 			for(Interaction i:listeInteractionEnCours)
