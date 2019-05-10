@@ -1,8 +1,8 @@
 package timer;
 
-public class SpawnGraine extends TimerEvent{
+public class SpawnStuff extends TimerEvent{
 
-	public SpawnGraine()
+	public SpawnStuff()
 	{
 		super();
 	}

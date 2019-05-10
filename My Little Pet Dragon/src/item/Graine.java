@@ -1,7 +1,11 @@
 package item;
 
+import timer.TimerEvent;
+import timer.VieillirGraine;
+
 public class Graine extends Item{
 	
+	private TimerEvent timerEvent;
 	private int dureDeVie;
 	private boolean isInInvent;
 	private grainType type;
@@ -22,6 +26,7 @@ public class Graine extends Item{
 
 	public Graine(grainType type)
 	{
+		timerEvent = new VieillirGraine(this);
 		this.type = type;
 		
 	}

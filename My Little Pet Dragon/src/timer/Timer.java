@@ -8,6 +8,7 @@ public class Timer {
 	
 	public Timer()
 	{
+		eventListe = new ArrayList<TimerEvent>();
 		tick = 0;
 	}
 	
