@@ -55,6 +55,13 @@ public class Jeu extends BasicGame {
 		{
 			drakeDrake.drawDragon();
 		}
+		if(mapToRender==maps[MAPS.JARDIN.toInt()])
+		{
+			if(joueur.getInvent().isAffiche())
+			{
+				jardinGarden.getInventaireJardin().Affiche();
+			}
+		}
 		drakeDrake.afficheLesBar();
 	}
 
@@ -68,6 +75,7 @@ public class Jeu extends BasicGame {
 		lakeLake=new Lac();
 		jardinGarden=new Jardin(joueur.getInvent());
 		//Tableau des 4 maps
+		joueur.setInventJardin(jardinGarden.getInventaireJardin());
 		maps=new TiledMap[4];
 		try {
 			maps[MAPS.LAC.toInt()] = new TiledMap("./maps/CarteLac.tmx");
