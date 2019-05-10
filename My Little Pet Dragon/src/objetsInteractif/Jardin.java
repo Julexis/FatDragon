@@ -2,11 +2,15 @@ package ObjetsInteractif;
 
 import java.util.ArrayList;
 import item.Inventaire;
+import timer.TimerEvent;
+import timer.VieillirJardin;
 import Interaction.*;
 
 import item.*;
 
 public class Jardin extends ObjetInteractif{
+	
+	TimerEvent timerEvent = new VieillirJardin(this);
 	
 	Inventaire inventaireJoueur;
 	private ArrayList<Plante> listePlante = new ArrayList<Plante>();
