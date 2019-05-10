@@ -242,11 +242,11 @@ public class Joueur extends Animal{
 	public void selectionOption(Input inputJoueur)
 	{
 		
-		 if(this.inputJoueur.isKeyDown (Input.KEY_UP))
+		 if(this.inputJoueur.isKeyPressed (Input.KEY_UP))
 			{
 			 optionChoisis--;
 			}
-		else if(this.inputJoueur.isKeyDown(Input.KEY_DOWN))
+		else if(this.inputJoueur.isKeyPressed(Input.KEY_DOWN))
 			{
 			optionChoisis++;
 			}
