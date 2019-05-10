@@ -153,7 +153,7 @@ public class Dragon extends ObjetInteractif {
 	}
 	public void drawDragon()
 	{
-		imageDragon.draw(150,150,height,height);
+		imageDragon.draw(200-height/2,200-height/2,height,height);
 	}
 	public void afficheLesBar()
 	{

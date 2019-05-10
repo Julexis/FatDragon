@@ -16,8 +16,18 @@ public class Joueur extends Animal{
 	//Joueur Hérite d'animal, il intègre les déplacements par clavier et possède un inventaire et affiche aussi les interactions possible des lieux
 	private int calqueInteragir;
 	private Input inputJoueur;
-	private Inventaire invent;
+	private Inventaire invent,inventJardin;
+	
+	public Inventaire getInventJardin() {
+		return inventJardin;
+	}
+
+	public void setInventJardin(Inventaire inventJardin) {
+		this.inventJardin = inventJardin;
+	}
+
 	private int size;
+	
 	private int optionChoisis;
 	private ObjetInteractif objetEnCours;
 	private ArrayList<Interaction> listeInteractionEnCours;

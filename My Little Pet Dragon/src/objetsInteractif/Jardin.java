@@ -50,7 +50,7 @@ public class Jardin extends ObjetInteractif{
 	}
 	public void showInventaire()
 	{
-		
+		inventaireJardin.Affiche();
 	}
 	public void growPlants()
 	{
