@@ -1,5 +1,5 @@
 package ObjetsInteractif;
-
+//Couleur utiliser pour les progress BAr
 public enum progressBar {
 	   JAUNE(0),
 	    BLEU(1),

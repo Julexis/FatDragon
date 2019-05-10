@@ -35,14 +35,16 @@ public class Dragon extends ObjetInteractif {
 	private TrueTypeFont fonty;
 	public Dragon(Joueur joueur)
 	{
+		//On rajoute l'event pour faire vieillir le dragon  en fonction du timer
 		timerEvent = new VeillirDragon(this);
-
+		
 		bars=new Image[3];
-
+		//Rajout des interactions associé 
 		listeInteraction.add(new NourrirDragon(this));
 		listeInteraction.add(new JouerAvecDragon(this));
 		listeInteraction.add(new LaverDragon(this));
 		inventJoueur=joueur.getInvent();
+		//Création des images pour le dragon et pour les magnifique bar de couleur
 		try {
 			imageDragon=new Image("./images/dragon.png");
 			bars[progressBar.BLEU.getBar()]=new Image("./imageBar/blue.png");
@@ -169,10 +171,12 @@ public class Dragon extends ObjetInteractif {
 	}
 	public void afficheLesBar()
 	{
+		//Chaque bar est afficher avec les statistiques associé et le texte aussi
 		afficheUneBar(60,10,"Faim :",hungerMeter,bars[progressBar.ROUGE.getBar()]);
 		afficheUneBar(60,30,"Propretï¿½ :",cleanliness,bars[progressBar.BLEU.getBar()]);
 		afficheUneBar(60,50,"Bonheur :",happiness,bars[progressBar.JAUNE.getBar()]);
 	}
+	//Méthode pour afficher une bar
 	public void afficheUneBar(int x,int y,String text,float amount,Image image)
 	{
 		fonty.drawString(10, y, text);
@@ -220,27 +224,7 @@ public class Dragon extends ObjetInteractif {
 	public void setDead(boolean isDead) {
 		this.isDead = isDead;
 	}
-	public void bloquerDragon()
-	{
-		float taille = (200 - getHeight())/2;
-		
-		if(joueur.getEmplacementX() >= taille && joueur.getEmplacementX() <= taille + getHeight())
-		{
-			joueur.setEmplacementX(taille - 2);
-		}
-		if(joueur.getEmplacementY() >= taille && joueur.getEmplacementY() <= taille + getHeight())
-		{
-			joueur.setEmplacementY(taille - 2);
-		}
-		if(joueur.getEmplacementX() <= taille + getHeight() && joueur.getEmplacementX() >= taille)
-		{
-			joueur.setEmplacementX(taille + 2);
-		}
-		if(joueur.getEmplacementY() <= taille + getHeight() && joueur.getEmplacementY() >= taille)
-		{
-			joueur.setEmplacementY(taille + 2);
-		}
-	}
+	
 
 	public boolean isDeadSad() {
 		return isDeadSad;
