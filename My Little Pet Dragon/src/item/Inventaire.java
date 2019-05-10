@@ -16,7 +16,16 @@ public class Inventaire {
 	private int sizeContourCase;
 	private int row;
 	private int line; 
+	private boolean isSelect;
 	
+
+	public boolean isSelect() {
+		return isSelect;
+	}
+
+	public void setSelect(boolean isSelect) {
+		this.isSelect = isSelect;
+	}
 
 	public int getSelectionX() {
 		return selectionX;
@@ -129,7 +138,10 @@ public class Inventaire {
 		//le contour se fait aussi en conséquence, pareil pour les case qui se font dans une boucle
 		int x=0,y=0;
 		imageFond.draw(emplacementXimageFond, emplacementYimageFond, largeurImageFond, hauteurImageFond);
+		if(isSelect)
+		{
 		imageContour.draw(2.5f+emplacementXimageFond+32.5f*selectionX,2.5f+emplacementYimageFond+32.5f*selectionY,sizeContourCase,sizeContourCase);
+		}
 		for (int i=0;i<line;i++)
 		{
 			for(int j=0;j<row;j++)

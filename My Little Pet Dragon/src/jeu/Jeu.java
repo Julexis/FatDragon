@@ -34,7 +34,7 @@ public class Jeu extends BasicGame {
 	public Jeu(String title) {
 		super(title);
 		
-		timerEvent = new SpawnStuff(this);
+		
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -70,8 +70,8 @@ public class Jeu extends BasicGame {
 		//Création du joueur
 		this.joueur=new Joueur(5, 16, 0.2f, 16);
 		//Création des objet à intéragir
-		
-		drakeDrake=new Dragon();
+		timerEvent = new SpawnStuff(this);
+		drakeDrake=new Dragon(joueur);
 		lakeLake=new Lac();
 		jardinGarden=new Jardin(joueur.getInvent());
 		//Tableau des 4 maps
@@ -87,6 +87,7 @@ public class Jeu extends BasicGame {
 			Logger.getLogger(Jeu.class.getName()).log(Level.SEVERE, null, e);
 		}
 		//On affiche la taille d'une tile
+		jardinGarden.getInventaireJardin().setSelect(false);
 		tileSize=20;
 		//La première map à afficher est la map Lac
 		mapToRender=maps[MAPS.LAC.toInt()];
