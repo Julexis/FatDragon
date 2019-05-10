@@ -1,15 +1,22 @@
 package timer;
 
+import jeu.Jeu;
+
 public class SpawnStuff extends TimerEvent{
 
-	public SpawnStuff()
+	Jeu jeu;
+	
+	public SpawnStuff(Jeu jeu)
 	{
 		super();
+		this.jeu = jeu;
 	}
+	
 	
 	@Override
 	public void trigger()
 	{
-		//Écrire code pour ajouter des graines dans la forêt
+		/*jeu.SpawnSeed(1, 3);
+		jeu.SpawnPhacochere(0, 2);*/
 	}
 }
