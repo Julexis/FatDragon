@@ -212,6 +212,10 @@ public class Joueur extends Animal{
 	public Inventaire getInvent() {
 		return invent;
 	}
+	public void afficheInventJardin()
+	{
+		
+	}
 	//La fonction doit définir si le joueur est sur un emplacement permettant d'intéragir ou non (non utiliser)
 	public void updateOptionListe()
 	{

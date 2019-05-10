@@ -15,13 +15,13 @@ import item.*;
 public class Jardin extends ObjetInteractif{
 	
 	TimerEvent timerEvent = new VieillirJardin(this);
-	Inventaire inventaireJardin;
+	private Inventaire inventaireJardin;
 	Inventaire inventaireJoueur;
 	private ArrayList<Plante> listePlante = new ArrayList<Plante>();
 
 	public Jardin(Inventaire i) throws SlickException
 	{
-		inventaireJardin=new Inventaire(new Image("./ressourceJeu/fondInventaire.png"),new Image("./ressourceJeu/case.png"),new Image("./ressourceJeu/caseContour.png"),2,3,340,100);
+		setInventaireJardin(new Inventaire(new Image("./ressourceJeu/fondInventaire.png"),new Image("./ressourceJeu/case.png"),new Image("./ressourceJeu/caseContour.png"),3,2,250,100));
 
 		inventaireJoueur = i;
 		listeInteraction.add(new PlanterGraine(this));
@@ -50,7 +50,7 @@ public class Jardin extends ObjetInteractif{
 	}
 	public void showInventaire()
 	{
-		inventaireJardin.Affiche();
+		getInventaireJardin().Affiche();
 	}
 	public void growPlants()
 	{
@@ -67,5 +67,13 @@ public class Jardin extends ObjetInteractif{
 				p.setNiveauDeCompletion(comp);
 			}
 		}
+	}
+
+	public Inventaire getInventaireJardin() {
+		return inventaireJardin;
+	}
+
+	public void setInventaireJardin(Inventaire inventaireJardin) {
+		this.inventaireJardin = inventaireJardin;
 	}
 }
