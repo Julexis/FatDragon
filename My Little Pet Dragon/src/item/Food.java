@@ -1,7 +1,7 @@
 package item;
 
 public class Food extends Item{
-	private int foodValue;
+	private int foodValue;//nombre de point que la nourriture donne au dragon lorsqu'elle est consommé
 	
 	public int getFoodValue() {
 		return foodValue;
