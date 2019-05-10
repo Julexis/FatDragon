@@ -7,14 +7,14 @@ public class Item {
 	private boolean isDestructable = true;//Determine si l'objet peut être défausser par le joueur
 	//(en résumé, tout sauf le sceau!)
 	
-	private static Image image;//image de l'objet
+	private  Image image;//image de l'objet
 	
 	//getter setter
-	public static Image getImage() {
+	public  Image getImage() {
 		return image;
 	}
-	public static void setImage(Image image) {
-		Item.image = image;
+	public  void setImage(Image image) {
+		this.image = image;
 	}
 	
 	//getter setter

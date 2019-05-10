@@ -121,13 +121,15 @@ public class Inventaire {
 		
 
 		Item i;
-		if(items.size()<selectionX+selectionY*line)
+		if(selectionX+(selectionY*line)>=items.size())
 		{
 			i=null;
 		}
 		else
 		{
+			
 			i=items.get(selectionX+selectionY*line);
+			
 		}
 		return i;
 

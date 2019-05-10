@@ -111,7 +111,7 @@ public class Jeu extends BasicGame {
 		//On vérifie si le joueur change de map
 		changementMap();
 		Timer.increment();
-		
+
 	}
 		
 	public void changementMap()
