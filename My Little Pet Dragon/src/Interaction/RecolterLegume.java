@@ -19,7 +19,7 @@ public class RecolterLegume extends Interaction{
 			Plante p = (Plante)i;
 				
 			jardin.harvest(p);
-			
+			jardin.getInventaireJardin().suppress();
 		}catch(Exception e)
 		{
 			

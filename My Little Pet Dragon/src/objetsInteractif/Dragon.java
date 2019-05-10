@@ -177,6 +177,7 @@ public class Dragon extends ObjetInteractif {
 	{
 		fonty.drawString(10, y, text);
 		image.draw(x, y,amount,10);
+		
 	}
 	public float getHunger() {
 		return hungerMeter;

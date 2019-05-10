@@ -1,5 +1,8 @@
 package item;
 
+import org.newdawn.slick.Image;
+import org.newdawn.slick.SlickException;
+
 import timer.TimerEvent;
 import timer.VieillirGraine;
 
@@ -37,10 +40,29 @@ public class Graine extends Item{
 	public Graine(grainType type)
 	{
 		timerEvent = new VieillirGraine(this);
+		
 		this.type = type;
-		dureDeVie = 205;
-		isRotten = false;
-		isInInvent = false;
+		try {
+				switch(type)//Initialise le legume en fonction de la sorte de grain
+				{
+				case blue:
+					setImage(new Image ("./imagesItem/GraineBleue.png"));
+					break;
+				case red:
+					setImage(new Image ("./imagesItem/GraineRouge.png"));
+					break;
+				case green:
+					setImage(new Image ("./imagesItem/GrainVerte.png"));
+					break;
+				default:
+					setImage(new Image ("./imagesItem/GraineJaune.png"));
+				}
+			}
+			catch (SlickException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
 		
 	}
 	

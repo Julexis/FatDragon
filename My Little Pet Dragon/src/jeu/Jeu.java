@@ -228,7 +228,7 @@ public class Jeu extends BasicGame {
 			{
 				x = ThreadLocalRandom.current().nextInt(0, 20);
 				y = ThreadLocalRandom.current().nextInt(0, 20);
-			}while(x == 0);//Put tileIsNotEmpty condition
+			}while(maps[MAPS.FORET.toInt()].getTileId(x, y, maps[MAPS.FORET.toInt()].getLayerIndex("bloquer"))!=0);//Put tileIsNotEmpty condition
 			
 			switch(type)
 			{

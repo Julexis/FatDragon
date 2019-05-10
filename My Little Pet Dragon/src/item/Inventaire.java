@@ -19,6 +19,14 @@ public class Inventaire {
 	private boolean isSelect;
 	
 
+	public ArrayList<Item> getItems() {
+		return items;
+	}
+
+	public void setItems(ArrayList<Item> items) {
+		this.items = items;
+	}
+
 	public boolean isSelect() {
 		return isSelect;
 	}

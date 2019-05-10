@@ -17,11 +17,11 @@ public class Jardin extends ObjetInteractif{
 	TimerEvent timerEvent = new VieillirJardin(this);
 	private Inventaire inventaireJardin;
 	Inventaire inventaireJoueur;
-	private ArrayList<Plante> listePlante = new ArrayList<Plante>();
+	
 
 	public Jardin(Inventaire i) throws SlickException
 	{
-		setInventaireJardin(new Inventaire(new Image("./ressourceJeu/fondInventaire.png"),new Image("./ressourceJeu/case.png"),new Image("./ressourceJeu/caseContour.png"),3,2,250,100));
+		inventaireJardin=new Inventaire(new Image("./ressourceJeu/fondInventaire.png"),new Image("./ressourceJeu/case.png"),new Image("./ressourceJeu/caseContour.png"),3,2,250,100);
 
 		inventaireJoueur = i;
 		listeInteraction.add(new PlanterGraine(this));
@@ -31,42 +31,53 @@ public class Jardin extends ObjetInteractif{
 	public void putGraine(Graine g)
 	{
 		Plante p = new Plante(g.getType());
-		listePlante.add(p);
+		inventaireJardin.addObjet(p);
+		
 	}
 	
 	public void harvest(Plante p)
 	{
-		listePlante.remove(p);
+		
 		Legume l = new Legume(p.getType());
-		//inventaireJoueur.addStuff();
+		inventaireJoueur.addObjet(l);
 	}
 	
-	public ArrayList<Plante> getListePlante() {
-		return listePlante;
-	}
+	
 
-	public void setListePlante(ArrayList<Plante> listePlante) {
-		this.listePlante = listePlante;
-	}
+	
 	public void showInventaire()
 	{
 		getInventaireJardin().Affiche();
 	}
 	public void growPlants()
 	{
-		for(Plante p: listePlante)
+		for(Item i: inventaireJardin.getItems())
 		{
-			int comp = p.getNiveauDeCompletion()-1;
-			
-			if (comp < 0)
+			try {
+				Plante p=(Plante)i;
+				int comp = p.getNiveauDeCompletion()-1;
+				
+				if (comp < 0)
+				{
+					p.setNiveauDeCompletion(0);
+				}
+				else
+				{
+					p.setNiveauDeCompletion(comp);
+				}
+			}catch(Exception e)
 			{
-				p.setNiveauDeCompletion(0);
-			}
-			else
-			{
-				p.setNiveauDeCompletion(comp);
+				
 			}
 		}
+	}
+
+	public Inventaire getInventaireJoueur() {
+		return inventaireJoueur;
+	}
+
+	public void setInventaireJoueur(Inventaire inventaireJoueur) {
+		this.inventaireJoueur = inventaireJoueur;
 	}
 
 	public Inventaire getInventaireJardin() {

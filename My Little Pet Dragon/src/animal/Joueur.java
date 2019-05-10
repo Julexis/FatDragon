@@ -8,6 +8,7 @@ import org.newdawn.slick.tiled.TiledMap;
 
 import Interaction.Interaction;
 import ObjetsInteractif.ObjetInteractif;
+import item.Graine;
 import item.Inventaire;
 import item.Legume;
 import item.Sceau;
@@ -58,6 +59,7 @@ public class Joueur extends Animal{
 		fonty = new TrueTypeFont( awtFont, false);
 		invent.addObjet(new Sceau());
 		invent.addObjet(new Legume(grainType.green));
+		invent.addObjet(new Graine(grainType.blue));
 	}
 
 	public void deplacement(Input inputJoueur) {

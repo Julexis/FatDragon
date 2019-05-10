@@ -20,6 +20,7 @@ public class PlanterGraine extends Interaction{
 			Graine g = (Graine)i;
 				
 			jardin.putGraine(g);
+			jardin.getInventaireJoueur().suppress();
 		} catch(Exception e)
 		{
 			
