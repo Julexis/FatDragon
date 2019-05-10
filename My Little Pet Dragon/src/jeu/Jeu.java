@@ -51,7 +51,7 @@ public class Jeu extends BasicGame {
 		drakeDrake=new Dragon();
 		lakeLake=new Lac();
 		jardinGarden=new Jardin(joueur.getInvent());
-		//Tablea des 4 maps
+		//Tableau des 4 maps
 		maps=new TiledMap[4];
 		try {
 			maps[MAPS.LAC.toInt()] = new TiledMap("./maps/CarteLac.tmx");
