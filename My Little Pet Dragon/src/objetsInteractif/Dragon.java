@@ -153,11 +153,9 @@ public class Dragon extends ObjetInteractif {
 	}
 	public void afficheLesBar()
 	{
-		afficheUneBar(40,10,"Faim",hungerMeter,bars[progressBar.ROUGE.getBar()]);
-		afficheUneBar(40,30,"Propreté",hungerMeter,bars[progressBar.BLEU.getBar()]);
-		afficheUneBar(40,50,"Faim",hungerMeter,bars[progressBar.BLEU.getBar()]);
-
-
+		afficheUneBar(40,10,"Faim :",hungerMeter,bars[progressBar.ROUGE.getBar()]);
+		afficheUneBar(40,30,"Propreté :",hungerMeter,bars[progressBar.BLEU.getBar()]);
+		afficheUneBar(40,50,"Bonheur :",hungerMeter,bars[progressBar.JAUNE.getBar()]);
 	}
 	public void afficheUneBar(int y,int x,String text,int amount,Image image)
 	{
