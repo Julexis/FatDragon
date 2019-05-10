@@ -16,23 +16,7 @@ public class Inventaire {
 	private int row;
 	private int line; 
 	
-
-	public int getSelectionX() {
-		return selectionX;
-	}
-
-	public void setSelectionX(int selectionX) {
-		this.selectionX = selectionX;
-	}
-
-	public int getSelectionY() {
-		return selectionY;
-	}
-
-	public void setSelectionY(int selectionY) {
-		this.selectionY = selectionY;
-	}
-
+	//constructor
 	public Inventaire(Image imageFond, Image caseInventaire, Image imageContour, int row, int line, int emplacementXimageFond, int emplacementYimageFond) {
 		super();
 		this.imageFond = imageFond;
@@ -48,6 +32,38 @@ public class Inventaire {
 		largeurImageFond = (line * sizeCaseInventaire+25)+(line-3)*8;
 		
 		
+	}
+
+	public void Affiche()
+	{
+		
+		imageFond.draw(emplacementXimageFond, emplacementYimageFond, largeurImageFond, hauteurImageFond);
+		imageContour.draw(2.5f+emplacementXimageFond+32.5f*selectionX,2.5f+emplacementYimageFond+32.5f*selectionY,sizeContourCase,sizeContourCase);
+		for (int i=0;i<line;i++)
+		{
+			for(int j=0;j<row;j++)
+			{
+				caseInventaire.draw((emplacementXimageFond+32.5f*i)+5,(emplacementYimageFond+32.5f*j)+5,sizeCaseInventaire,sizeCaseInventaire);
+			}
+		}
+		
+	}
+	
+	//getter setter
+	public int getSelectionX() {
+		return selectionX;
+	}
+
+	public void setSelectionX(int selectionX) {
+		this.selectionX = selectionX;
+	}
+
+	public int getSelectionY() {
+		return selectionY;
+	}
+
+	public void setSelectionY(int selectionY) {
+		this.selectionY = selectionY;
 	}
 
 
@@ -97,19 +113,5 @@ public class Inventaire {
 
 	public void setAffiche(boolean isAffiche) {
 		this.isAffiche = isAffiche;
-	}
-	public void Affiche()
-	{
-		
-		imageFond.draw(emplacementXimageFond, emplacementYimageFond, largeurImageFond, hauteurImageFond);
-		imageContour.draw(2.5f+emplacementXimageFond+32.5f*selectionX,2.5f+emplacementYimageFond+32.5f*selectionY,sizeContourCase,sizeContourCase);
-		for (int i=0;i<line;i++)
-		{
-			for(int j=0;j<row;j++)
-			{
-				caseInventaire.draw((emplacementXimageFond+32.5f*i)+5,(emplacementYimageFond+32.5f*j)+5,sizeCaseInventaire,sizeCaseInventaire);
-			}
-		}
-		
 	}
 }
