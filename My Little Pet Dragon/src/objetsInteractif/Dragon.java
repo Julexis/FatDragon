@@ -1,9 +1,12 @@
 package ObjetsInteractif;
 
 import item.*;
+import timer.TimerEvent;
+import timer.VeillirDragon;
 
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.TrueTypeFont;
 
 import Interaction.*;
 
@@ -18,15 +21,17 @@ public class Dragon extends ObjetInteractif {
 	Image[] bars;
 	private int growRate = 10;
 	private int height = 30;
-	
+	private TimerEvent timerEvent;
 	private final int maxHeight = 400;
 
 	private boolean isDead = false;
 	private boolean isDeadSad = false;
 	private boolean isDeadDirty = false;
-	
+	private TrueTypeFont fonty;
 	public Dragon()
 	{
+		timerEvent = new VeillirDragon(this);
+		
 		bars=new Image[3];
 		
 		listeInteraction.add(new NourrirDragon(this));
@@ -146,7 +151,15 @@ public class Dragon extends ObjetInteractif {
 	{
 		imageDragon.draw(200,200,height,height);
 	}
-	public void afficheBar(int y,int x,String text,int amount,Image image)
+	public void afficheLesBar()
+	{
+		afficheUneBar(40,10,"Faim",hungerMeter,bars[progressBar.ROUGE.getBar()]);
+		afficheUneBar(40,30,"Propreté",hungerMeter,bars[progressBar.BLEU.getBar()]);
+		afficheUneBar(40,50,"Faim",hungerMeter,bars[progressBar.BLEU.getBar()]);
+
+
+	}
+	public void afficheUneBar(int y,int x,String text,int amount,Image image)
 	{
 		
 	}
