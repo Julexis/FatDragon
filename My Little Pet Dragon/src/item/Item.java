@@ -3,7 +3,7 @@ package item;
 import org.newdawn.slick.Image;
 
 //class abstraite d'item
-public class Item {
+abstract public class Item {
 	private boolean isDestructable = true;//Determine si l'objet peut être défausser par le joueur
 	//(en résumé, tout sauf le sceau!)
 	

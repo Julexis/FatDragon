@@ -3,7 +3,7 @@ package Interaction;
 import item.Item;
 import ObjetsInteractif.*;
 //Base pour les autres interactions possible. Les Objet interaction appelle une fonction et possède un texte à afficher
-public class Interaction {
+abstract public class Interaction {
 	protected ObjetInteractif structure;
 	
 	
