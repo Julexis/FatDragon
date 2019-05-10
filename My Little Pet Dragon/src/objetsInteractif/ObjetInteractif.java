@@ -3,6 +3,7 @@ package ObjetsInteractif;
 import java.util.ArrayList;
 import Interaction.*;
 
+//Class abstraite des objets du jeu avec lesquel le joueur pourra interagir.
 public class ObjetInteractif {
 	protected ArrayList<Interaction> listeInteraction = new ArrayList<Interaction>();
 
