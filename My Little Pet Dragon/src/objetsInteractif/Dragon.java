@@ -35,10 +35,11 @@ public class Dragon extends ObjetInteractif {
 	private TrueTypeFont fonty;
 	public Dragon(Joueur joueur)
 	{
+		//On rajoute l'event pour faire vieillir le dragon  en fonction du timer
 		timerEvent = new VeillirDragon(this);
-
+		
 		bars=new Image[3];
-
+		//Rajout des interactions associé 
 		listeInteraction.add(new NourrirDragon(this));
 		listeInteraction.add(new JouerAvecDragon(this));
 		listeInteraction.add(new LaverDragon(this));
