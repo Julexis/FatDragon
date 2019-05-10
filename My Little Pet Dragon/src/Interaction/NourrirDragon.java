@@ -5,26 +5,18 @@ import ObjetsInteractif.*;
 
 public class NourrirDragon extends Interaction{
 	
+	Dragon dragon;
 	
-	public NourrirDragon(ObjetInteractif o)
+	public NourrirDragon(Dragon dragon)
 	{
-		super(o);
+		this.dragon = dragon;
 	}
 	
 	@Override
 	public void run(Item i)
 	{
-		try
-		{
-			Dragon drag = (Dragon)structure;
-			
-			Food f = (Food) i;
-			drag.feedDragon(f);
-		}
-		catch (Exception e)
-		{
-			//todo code pour les item i non-food
-		}
+		Food f = (Food) i;
+		dragon.feedDragon(f);
 	}
 	
 	@Override
