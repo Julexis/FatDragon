@@ -15,9 +15,15 @@ public class PlanterGraine extends Interaction{
 	@Override
 	public void run(Item i)
 	{
-		Graine s = (Graine)i;
+		try
+		{
+			Graine g = (Graine)i;
+				
+			jardin.putGraine(g);
+		} catch(Exception e)
+		{
 			
-		jardin.putGraine(s);
+		}
 	}
 	
 	@Override
