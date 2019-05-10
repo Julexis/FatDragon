@@ -24,7 +24,7 @@ public class Dragon extends ObjetInteractif {
 	private int growRate = 10;
 	private int height = 30;
 	private TimerEvent timerEvent;
-	private final int maxHeight = 400;
+	private final int maxHeight = 250;
 
 	private boolean isDead = false;
 	private boolean isDeadSad = false;
