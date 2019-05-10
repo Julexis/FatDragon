@@ -5,6 +5,8 @@ import org.newdawn.slick.Image;
 public class Item {
 	private boolean isDestructable = true;
 	private static Image image;
+	
+	//getter setter
 	public static Image getImage() {
 		return image;
 	}
@@ -12,6 +14,7 @@ public class Item {
 		Item.image = image;
 	}
 	
+	//getter setter
 	public boolean isDestructable() {
 		return isDestructable;
 	}
