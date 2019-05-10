@@ -6,9 +6,15 @@ import java.util.logging.Logger;
 
 import org.newdawn.slick.*;
 import org.newdawn.slick.tiled.TiledMap;
+
+import timer.SpawnStuff;
 import timer.Timer;
+import timer.TimerEvent;
 import ObjetsInteractif.*;
 import animal.Joueur;
+import animal.SpawnType;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Jeu extends BasicGame {
 	
 	//Jeu principale
@@ -23,10 +29,12 @@ public class Jeu extends BasicGame {
 	private Jardin jardinGarden;
 	private Lac lakeLake;
 	
+	private TimerEvent timerEvent;
+	
 	public Jeu(String title) {
 		super(title);
 		
-		
+		timerEvent = new SpawnStuff(this);
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -194,5 +202,40 @@ public class Jeu extends BasicGame {
 		joueur.setCalqueInteragir(map.getLayerIndex("interagir"));
 	}
 	
+	public void SpawnSomething(int minNumberOfSpawns, int maxNumberOfSpawns, SpawnType type)
+	{
+		int nombreDeSpawn = ThreadLocalRandom.current().nextInt(minNumberOfSpawns, maxNumberOfSpawns + 1);
+		int x = 0;
+		int y = 0;
+		
+		for (int i = 0; i < nombreDeSpawn; i++)
+		{
+			do
+			{
+				x = ThreadLocalRandom.current().nextInt(0, 20);
+				y = ThreadLocalRandom.current().nextInt(0, 20);
+			}while(x == 0);//Put tileIsNotEmpty condition
+			
+			switch(type)
+			{
+			case seed:
+				SpawnSeed(x, y);
+				break;
+			case phacochere:
+				SpawnPhacochere(x, y);
+				break;
+			}
+		}
 	}
+	
+	private void SpawnSeed(int x, int y)
+	{
+		
+	}
+	
+	private void SpawnPhacochere(int x, int y)
+	{
+		
+	}
+}
 	
