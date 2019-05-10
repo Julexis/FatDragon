@@ -11,8 +11,8 @@ public class Sceau extends Item{
 	{
 		setDestructable(true);
 		try {
-			imagePlein=(new Image("./imagesItem/SceauPlein"));
-			imageVide=(new Image("./imagesItem/SceauVide"));
+			imagePlein=(new Image("./imagesItem/SceauPlein.png"));
+			imageVide=(new Image("./imagesItem/SceauVide.png"));
 		} catch (SlickException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
