@@ -4,6 +4,8 @@ import item.*;
 import timer.TimerEvent;
 import timer.VeillirDragon;
 
+import java.awt.Font;
+
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.TrueTypeFont;
@@ -47,7 +49,8 @@ public class Dragon extends ObjetInteractif {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		Font awtFont = new Font("Times New Roman", Font.BOLD, 10);
+		fonty = new TrueTypeFont( awtFont, false);
 		
 	}
 	
@@ -159,7 +162,8 @@ public class Dragon extends ObjetInteractif {
 	}
 	public void afficheUneBar(int y,int x,String text,int amount,Image image)
 	{
-		
+		fonty.drawString(10, y, text);
+		image.draw(x, y,amount,10);
 	}
 	public int getHunger() {
 		return hungerMeter;
