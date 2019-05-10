@@ -261,8 +261,10 @@ public class Joueur extends Animal{
 	}
 	public void appelleFonction()
 	{
-		
+		if(invent.getItemSelect()!=null)
+		{
 		listeInteractionEnCours.get(optionChoisis).run(invent.getItemSelect());
+		}
 		choixInteractionActive=false;
 	}
 public ArrayList<Interaction> getListeInteractionEnCours() {
