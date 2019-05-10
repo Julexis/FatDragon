@@ -61,7 +61,9 @@ public class Jeu extends BasicGame {
 			if(joueur.getInvent().isAffiche())
 			{
 				jardinGarden.getInventaireJardin().Affiche();
+				
 			}
+			jardinGarden.afficherPlants();
 		}
 		drakeDrake.afficheLesBar();
 	}

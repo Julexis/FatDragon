@@ -10,7 +10,7 @@ public class Timer {
 	//Incrémente chaque update(60 fois par secondes, juste avant l'affichage)
 	public static void increment()
 	{
-		tick = (tick + 1) % 60;
+		tick = (tick + 1) % 5;
 		
 		if (tick == 0)
 		{
