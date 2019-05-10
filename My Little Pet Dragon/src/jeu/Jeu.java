@@ -1,11 +1,12 @@
 package jeu;
 
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.newdawn.slick.*;
 import org.newdawn.slick.tiled.TiledMap;
-
+import timer.Timer;
 import ObjetsInteractif.*;
 import animal.Joueur;
 public class Jeu extends BasicGame {
@@ -21,6 +22,7 @@ public class Jeu extends BasicGame {
 	private Dragon drakeDrake;
 	private Jardin jardinGarden;
 	private Lac lakeLake;
+	private Timer timer;
 	public Jeu(String title) {
 		super(title);
 		
@@ -43,8 +45,9 @@ public class Jeu extends BasicGame {
 		}
 		if(mapToRender==maps[MAPS.DRAGON.toInt()])
 		{
-		drakeDrake.drawDragon();
+			drakeDrake.drawDragon();
 		}
+		drakeDrake.afficheLesBar();
 	}
 
 	@Override
@@ -52,6 +55,7 @@ public class Jeu extends BasicGame {
 		//Création du joueur
 		this.joueur=new Joueur(5, 16, 0.2f, 16);
 		//Création des objet à intéragir
+		timer=new Timer();
 		drakeDrake=new Dragon();
 		lakeLake=new Lac();
 		jardinGarden=new Jardin(joueur.getInvent());
@@ -89,6 +93,7 @@ public class Jeu extends BasicGame {
 		joueur.InputJoueur(arg0.getInput());
 		//On vérifie si le joueur change de map
 		changementMap();
+		timer.increment();
 		
 	}
 		
