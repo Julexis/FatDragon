@@ -223,11 +223,11 @@ public class Dragon extends ObjetInteractif {
 		{
 			joueur.setEmplacementY(taille - 2);
 		}
-		if(joueur.getEmplacementX() <= taille + getHeight())
+		if(joueur.getEmplacementX() <= taille + getHeight() && joueur.getEmplacementX() >= taille)
 		{
 			joueur.setEmplacementX(taille + 2);
 		}
-		if(joueur.getEmplacementY() <= taille + getHeight())
+		if(joueur.getEmplacementY() <= taille + getHeight() && joueur.getEmplacementY() >= taille)
 		{
 			joueur.setEmplacementY(taille + 2);
 		}
