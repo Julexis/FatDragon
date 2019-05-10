@@ -18,7 +18,11 @@ public class NourrirDragon extends Interaction{
 		try
 		{
 			Food f = (Food) i;
-			dragon.feedDragon(f);
+			/*if (!dragon.IsDeadSad())
+			{
+				
+				dragon.feedDragon(f);
+			}*/
 			
 		} catch(Exception e)
 		{
