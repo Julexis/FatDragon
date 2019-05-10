@@ -26,6 +26,7 @@ public class Dragon extends ObjetInteractif {
 	private int height = 30;
 	private TimerEvent timerEvent;
 	private final int maxHeight = 200;
+	private Joueur joueur;
 
 
 	private boolean isDead = false;
@@ -212,7 +213,24 @@ public class Dragon extends ObjetInteractif {
 	}
 	public void bloquerDragon()
 	{
-		if(joueur.getEmplacementX() >= getHeight())
+		float taille = (200 - getHeight())/2;
+		
+		if(joueur.getEmplacementX() >= taille && joueur.getEmplacementX() <= taille + getHeight())
+		{
+			joueur.setEmplacementX(taille - 2);
+		}
+		if(joueur.getEmplacementY() >= taille && joueur.getEmplacementY() <= taille + getHeight())
+		{
+			joueur.setEmplacementY(taille - 2);
+		}
+		if(joueur.getEmplacementX() <= taille + getHeight())
+		{
+			joueur.setEmplacementX(taille + 2);
+		}
+		if(joueur.getEmplacementY() <= taille + getHeight())
+		{
+			joueur.setEmplacementY(taille + 2);
+		}
 	}
 
 	public boolean isDeadSad() {
