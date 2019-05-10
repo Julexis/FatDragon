@@ -1,6 +1,9 @@
 package ObjetsInteractif;
 
 import item.*;
+
+import org.newdawn.slick.Image;
+
 import Interaction.*;
 
 public class Dragon extends ObjetInteractif {
@@ -123,7 +126,10 @@ public class Dragon extends ObjetInteractif {
 		cleanliness = maxCleanliness;
 		//Dragon is tout propre :)
 	}
-	
+	public void afficheBar(int y,int x,String text,int amount,Image image)
+	{
+		
+	}
 	public int getHunger() {
 		return hungerMeter;
 	}
