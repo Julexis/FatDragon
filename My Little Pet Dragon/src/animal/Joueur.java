@@ -45,6 +45,7 @@ public class Joueur extends Animal{
 		invent.setSelectionX(0);
 		invent.setSelectionY(0);
 		choixInteractionActive=false;
+		invent.setSelect(true);
 		
 		//Création du fond pour la future liste d'interaction
 		Font awtFont = new Font("Times New Roman", Font.BOLD, 10);
