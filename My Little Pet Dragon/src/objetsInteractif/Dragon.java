@@ -11,6 +11,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.TrueTypeFont;
 
 import Interaction.*;
+import animal.Joueur;
 
 public class Dragon extends ObjetInteractif {
 	private float hungerMeter = 100;//100 is full and 0 is dead
@@ -25,12 +26,14 @@ public class Dragon extends ObjetInteractif {
 	private int height = 30;
 	private TimerEvent timerEvent;
 	private final int maxHeight = 400;
-
+	private Joueur joueur;
+	
+	
 	private boolean isDead = false;
 	private boolean isDeadSad = false;
 	private boolean isDeadDirty = false;
 	private TrueTypeFont fonty;
-	public Dragon()
+	public Dragon(Joueur joueur)
 	{
 		timerEvent = new VeillirDragon(this);
 		
@@ -52,6 +55,7 @@ public class Dragon extends ObjetInteractif {
 		
 		Font awtFont = new Font("Times New Roman", Font.BOLD, 10);
 		fonty = new TrueTypeFont( awtFont, false);
+		this.joueur = joueur;
 		
 	}
 	
@@ -207,5 +211,26 @@ public class Dragon extends ObjetInteractif {
 	public void setDead(boolean isDead) {
 		this.isDead = isDead;
 	}
+	public void bloquerDragon()
+	{
+		if(joueur.getEmplacementX() >= getHeight())
+	}
+
+	public boolean isDeadSad() {
+		return isDeadSad;
+	}
+
+	public void setDeadSad(boolean isDeadSad) {
+		this.isDeadSad = isDeadSad;
+	}
+
+	public boolean isDeadDirty() {
+		return isDeadDirty;
+	}
+
+	public void setDeadDirty(boolean isDeadDirty) {
+		this.isDeadDirty = isDeadDirty;
+	}
+	
 	
 }
