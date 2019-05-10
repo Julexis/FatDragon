@@ -9,6 +9,7 @@ public class Graine extends Item{
 		
 	}
 	
+	//getter setter
 	public grainType getType() {
 		return type;
 	}
