@@ -25,10 +25,9 @@ public class Dragon extends ObjetInteractif {
 	private int growRate = 10;
 	private int height = 30;
 	private TimerEvent timerEvent;
-	private final int maxHeight = 400;
-	private Joueur joueur;
-	
-	
+	private final int maxHeight = 200;
+
+
 	private boolean isDead = false;
 	private boolean isDeadSad = false;
 	private boolean isDeadDirty = false;
@@ -36,13 +35,13 @@ public class Dragon extends ObjetInteractif {
 	public Dragon(Joueur joueur)
 	{
 		timerEvent = new VeillirDragon(this);
-		
+
 		bars=new Image[3];
-		
+
 		listeInteraction.add(new NourrirDragon(this));
 		listeInteraction.add(new JouerAvecDragon(this));
 		listeInteraction.add(new LaverDragon(this));
-		
+
 		try {
 			imageDragon=new Image("./images/dragon.png");
 			bars[progressBar.BLEU.getBar()]=new Image("./imageBar/blue.png");
@@ -52,17 +51,17 @@ public class Dragon extends ObjetInteractif {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		Font awtFont = new Font("Times New Roman", Font.BOLD, 10);
 		fonty = new TrueTypeFont( awtFont, false);
 		this.joueur = joueur;
-		
+
 	}
-	
+
 	public boolean growDragon()
 	{
 		boolean isFat = false;//Boolean that tells if the dragon is done growing
-		
+
 		//GrowRate set
 		if (hungerMeter >= 80)
 		{
@@ -76,7 +75,7 @@ public class Dragon extends ObjetInteractif {
 		{
 			growRate = 8;
 		}
-		
+
 		//Grow
 		if (height + growRate < maxHeight)
 		{
@@ -87,7 +86,7 @@ public class Dragon extends ObjetInteractif {
 			height = maxHeight;
 			isFat = true;
 		}
-		
+
 		//Diminish hungerMeter
 		if (hungerMeter - 0.2f > 0)
 		{
@@ -98,7 +97,7 @@ public class Dragon extends ObjetInteractif {
 			hungerMeter = 0;
 			isDead = true;
 		}
-		
+
 		//Diminish happiness
 		if (happiness - 0.1f > 0)
 		{
@@ -109,7 +108,7 @@ public class Dragon extends ObjetInteractif {
 			happiness = 0;
 			isDeadSad = true;
 		}
-		
+
 		//Diminish Cleanliness
 		if (cleanliness - 0.5f > 0)
 		{
@@ -120,10 +119,10 @@ public class Dragon extends ObjetInteractif {
 			cleanliness = 0;
 			isDeadDirty = true;
 		}
-		
+
 		return isFat;
 	}
-	
+
 	public void feedDragon(Food f)
 	{
 		if (hungerMeter + f.getFoodValue() <= maxHunger)
@@ -134,9 +133,9 @@ public class Dragon extends ObjetInteractif {
 		{
 			hungerMeter = maxHunger;
 		}
-		
+
 	}
-	
+
 	public void playWithDragon()
 	{
 		if (happiness + 35 < maxHappiness)
@@ -149,7 +148,7 @@ public class Dragon extends ObjetInteractif {
 		}
 		//Ajouter une animation? faire un channeling? Sujet aux changements
 	}
-	
+
 	public void washDragon()
 	{
 		cleanliness = maxCleanliness;
@@ -162,7 +161,7 @@ public class Dragon extends ObjetInteractif {
 	public void afficheLesBar()
 	{
 		afficheUneBar(60,10,"Faim :",hungerMeter,bars[progressBar.ROUGE.getBar()]);
-		afficheUneBar(60,30,"Propreté :",cleanliness,bars[progressBar.BLEU.getBar()]);
+		afficheUneBar(60,30,"Propretï¿½ :",cleanliness,bars[progressBar.BLEU.getBar()]);
 		afficheUneBar(60,50,"Bonheur :",happiness,bars[progressBar.JAUNE.getBar()]);
 	}
 	public void afficheUneBar(int x,int y,String text,float amount,Image image)
@@ -231,6 +230,6 @@ public class Dragon extends ObjetInteractif {
 	public void setDeadDirty(boolean isDeadDirty) {
 		this.isDeadDirty = isDeadDirty;
 	}
-	
-	
+
+
 }

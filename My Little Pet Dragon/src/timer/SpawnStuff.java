@@ -1,5 +1,6 @@
 package timer;
 
+import animal.SpawnType;
 import jeu.Jeu;
 
 public class SpawnStuff extends TimerEvent{
@@ -16,7 +17,6 @@ public class SpawnStuff extends TimerEvent{
 	@Override
 	public void trigger()
 	{
-		/*jeu.SpawnSeed(1, 3);
-		jeu.SpawnPhacochere(0, 2);*/
+		jeu.SpawnSomething(1, 2, SpawnType.seed);
 	}
 }
