@@ -17,9 +17,12 @@ public class RecolterLegume extends Interaction{
 		try
 		{
 			Plante p = (Plante)i;
-				
-			jardin.harvest(p);
-			jardin.getInventaireJardin().suppress();
+			if (p.getNiveauDeCompletion() == 0)
+			{
+				jardin.harvest(p);
+				jardin.getInventaireJardin().suppress();
+			}
+			
 		}catch(Exception e)
 		{
 			
