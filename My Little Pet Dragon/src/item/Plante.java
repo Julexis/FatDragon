@@ -35,6 +35,8 @@ public class Plante extends Item{
 		e.printStackTrace();
 		}
 	}
+	
+	//getter setter
 	public grainType getType() {
 		return type;
 	}
