@@ -16,19 +16,19 @@ public class Plante extends Item{
 			{
 			case yellow:
 				niveauDeCompletion = 100;
-				setImage(new Image("./imagesItem/GraineJaune"));
+				setImage(new Image("./imagesItem/GraineJaune.png"));
 				break;
 			case blue:
 				niveauDeCompletion = 60;
-				setImage(new Image("./imagesItem/GraineBleue"));
+				setImage(new Image("./imagesItem/GraineBleue.png"));
 				break;
 			case red:
 				niveauDeCompletion = 75;
-				setImage(new Image("./imagesItem/GraineRouge"));
+				setImage(new Image("./imagesItem/GraineRouge.png"));
 				break;
 			case green:
 				niveauDeCompletion = 20;
-				setImage(new Image("./imagesItem/GraineVerte"));
+				setImage(new Image("./imagesItem/GraineVerte.png"));
 				break;
 			} 
 		}catch (SlickException e) {
