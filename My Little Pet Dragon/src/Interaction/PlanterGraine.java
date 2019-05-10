@@ -5,28 +5,19 @@ import ObjetsInteractif.*;
 
 public class PlanterGraine extends Interaction{
 	
-	public PlanterGraine(ObjetInteractif o)
-	{
-		super(o);
-	}
+	Jardin jardin;
 
-	
+	public PlanterGraine(Jardin jardin)
+	{
+		this.jardin = jardin;
+	}
 	
 	@Override
 	public void run(Item i)
 	{
-		try
-		{
-			Jardin g = (Jardin)structure;
-			Graine s = (Graine)i;
+		Graine s = (Graine)i;
 			
-			g.putGraine(s);
-		}
-		catch(Exception e)
-		{
-			//here
-		}
-		
+		jardin.putGraine(s);
 	}
 	
 	@Override
