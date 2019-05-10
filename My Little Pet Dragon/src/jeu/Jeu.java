@@ -122,8 +122,8 @@ public class Jeu extends BasicGame {
 		{
 			if(joueur.getEmplacementX()>= largeur-1)
 			{
-				joueur.setEmplacementX(1);
-				mapToRender=maps[MAPS.FORET.toInt()];
+				joueur.setEmplacementX(1);//On remet l'emplacement du bon côté
+				mapToRender=maps[MAPS.FORET.toInt()];//
 				changerMapJoueur(mapToRender);		
 			}
 			else if(joueur.getEmplacementY()>= 19)

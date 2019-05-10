@@ -7,7 +7,7 @@ import org.newdawn.slick.SlickException;
 public class Plante extends Item{
 	private grainType type;
 	private int niveauDeCompletion;
-	
+	private int completionMax;
 	
 	public Plante(grainType type)
 	{
@@ -17,19 +17,23 @@ public class Plante extends Item{
 			{
 			case yellow:
 				niveauDeCompletion = 100;
-				setImage(new Image("./imagesItem/GraineJaune.png"));
+				completionMax=100;
+				setImage(new Image("./imagesItem/arbreJaune.png"));
 				break;
 			case blue:
 				niveauDeCompletion = 60;
-				setImage(new Image("./imagesItem/GraineBleue.png"));
+				completionMax=60;
+				setImage(new Image("./imagesItem/arbreBleu.png"));
 				break;
 			case red:
 				niveauDeCompletion = 75;
-				setImage(new Image("./imagesItem/GraineRouge.png"));
+				completionMax=75;
+				setImage(new Image("./imagesItem/arbreRouge.png"));
 				break;
 			case green:
 				niveauDeCompletion = 20;
-				setImage(new Image("./imagesItem/GraineVerte.png"));
+				completionMax=20;
+				setImage(new Image("./imagesItem/arbreVert.png"));
 				break;
 			} 
 		}catch (SlickException e) {
