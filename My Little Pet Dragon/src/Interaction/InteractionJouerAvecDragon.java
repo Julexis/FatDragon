@@ -4,10 +4,10 @@ import ObjetsInteractif.Dragon;
 import ObjetsInteractif.ObjetInteractif;
 import item.Item;
 
-public class JouerAvecDragon extends Interaction{
+public class InteractionJouerAvecDragon extends Interaction{
 
 	
-	public JouerAvecDragon(ObjetInteractif o)
+	public InteractionJouerAvecDragon(ObjetInteractif o)
 	{
 		super(o);
 	}

@@ -3,9 +3,9 @@ package Interaction;
 import item.*;
 import ObjetsInteractif.*;
 
-public class PlanterGraine extends Interaction{
+public class InteractionPlanterGraine extends Interaction{
 	
-	public PlanterGraine(ObjetInteractif o)
+	public InteractionPlanterGraine(ObjetInteractif o)
 	{
 		super(o);
 	}

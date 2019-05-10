@@ -3,10 +3,10 @@ package Interaction;
 import item.*;
 import ObjetsInteractif.*;
 
-public class NourrirDragon extends Interaction{
+public class InteractionNourrirDragon extends Interaction{
 	
 	
-	public NourrirDragon(ObjetInteractif o)
+	public InteractionNourrirDragon(ObjetInteractif o)
 	{
 		super(o);
 	}

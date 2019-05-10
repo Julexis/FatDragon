@@ -11,7 +11,7 @@ public class Jardin extends ObjetInteractif{
 
 	public Jardin()
 	{
-		Interaction i = new PlanterGraine(this);
+		Interaction i = new InteractionPlanterGraine(this);
 		//Interaction i = new Cueillir(this);
 		listeInteraction.add(i);
 	}

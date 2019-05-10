@@ -22,8 +22,8 @@ public class Dragon extends ObjetInteractif {
 	
 	public Dragon()
 	{
-		listeInteraction.add(new NourrirDragon(this));
-		listeInteraction.add(new JouerAvecDragon(this));
+		listeInteraction.add(new InteractionNourrirDragon(this));
+		listeInteraction.add(new InteractionJouerAvecDragon(this));
 		//listeInteraction.add(new LaverDragon(this));
 	}
 	

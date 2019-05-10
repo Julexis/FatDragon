@@ -3,10 +3,10 @@ package Interaction;
 import item.*;
 import ObjetsInteractif.*;
 
-public class RemplirSceau extends Interaction{
+public class InteractionRemplirSceau extends Interaction{
 	
 	
-	public RemplirSceau(ObjetInteractif o)
+	public InteractionRemplirSceau(ObjetInteractif o)
 	{
 		super(o);
 	}

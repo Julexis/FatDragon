@@ -7,7 +7,7 @@ public class Lac extends ObjetInteractif {
 
 	public Lac()
 	{
-		RemplirSceau i = new RemplirSceau(this);
+		InteractionRemplirSceau i = new InteractionRemplirSceau(this);
 		
 		listeInteraction.add(i);
 	}
