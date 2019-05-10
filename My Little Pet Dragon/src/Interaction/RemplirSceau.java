@@ -4,9 +4,6 @@ import item.*;
 
 public class RemplirSceau extends Interaction{
 	
-	
-	
-	
 	@Override
 	public void run(Item i)
 	{
@@ -24,6 +21,6 @@ public class RemplirSceau extends Interaction{
 	@Override
 	public String getMessage()
 	{
-		return "Remplir un scio d'eau.";
+		return "Remplir un seau d'eau.";
 	}
 }
