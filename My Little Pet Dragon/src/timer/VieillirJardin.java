@@ -2,6 +2,7 @@ package timer;
 
 import ObjetsInteractif.Jardin;
 
+//TimerEvent qui appel la fonction pour faire pousser les plantes
 public class VieillirJardin extends TimerEvent{
 
 	Jardin jardin;
