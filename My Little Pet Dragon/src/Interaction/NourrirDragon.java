@@ -17,6 +17,7 @@ public class NourrirDragon extends Interaction{
 	{
 		try
 		{
+			//Le dragon ne mange que s'il n'est pas tout triste :( 
 			Food f = (Food) i;
 			if (!dragon.isDeadSad())
 			{
