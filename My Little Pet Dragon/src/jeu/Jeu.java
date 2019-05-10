@@ -41,6 +41,10 @@ public class Jeu extends BasicGame {
 		{
 		joueur.drawOptions();
 		}
+		if(mapToRender==maps[MAPS.DRAGON.toInt()])
+		{
+		drakeDrake.drawDragon();
+		}
 	}
 
 	@Override
