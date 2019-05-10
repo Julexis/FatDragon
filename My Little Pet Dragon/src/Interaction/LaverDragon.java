@@ -15,7 +15,17 @@ public class LaverDragon extends Interaction{
 	@Override
 	public void run(Item i)
 	{
-		dragon.playWithDragon();
+		try
+		{
+			Sceau s = (Sceau)i;
+			s.empty();
+			dragon.washDragon();
+			
+		} catch(Exception e)
+		{
+			
+		}
+		
 	}
 	
 	@Override
