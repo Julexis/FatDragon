@@ -18,8 +18,12 @@ public class LaverDragon extends Interaction{
 		try
 		{
 			Sceau s = (Sceau)i;
-			s.empty();
-			dragon.washDragon();
+			if (s.getIsFull())
+			{
+				s.empty();
+				dragon.washDragon();
+				
+			}
 			
 		} catch(Exception e)
 		{
