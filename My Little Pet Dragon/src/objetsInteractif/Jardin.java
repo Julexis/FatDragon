@@ -85,7 +85,7 @@ public class Jardin extends ObjetInteractif{
 			 hauteurLargeur*=40;
 			p.getImage().draw(x-hauteurLargeur/2,y-hauteurLargeur/2,hauteurLargeur,hauteurLargeur);
 			emplacement++;
-			if(emplacement%2==0)
+			if(emplacement%2==1)
 			{
 				x+=80;
 			}

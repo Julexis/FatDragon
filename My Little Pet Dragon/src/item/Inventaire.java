@@ -140,7 +140,7 @@ public class Inventaire {
 		else
 		{
 			
-			i=items.get(selectionX+selectionY*3);
+			i=items.get(selectionX+selectionY*line);
 			
 		}
 		return i;
