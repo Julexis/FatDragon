@@ -140,7 +140,7 @@ public class Inventaire {
 		else
 		{
 			
-			i=items.get(selectionX+selectionY*line);
+			i=items.get(selectionX+selectionY*3);
 			
 		}
 		return i;
@@ -167,7 +167,7 @@ public class Inventaire {
 		{
 			i.getImage().draw((emplacementXimageFond+32.5f*x)+10,(emplacementYimageFond+32.5f*y)+10,sizeCaseInventaire-10,sizeCaseInventaire-10);
 			x++;
-			if(x>line)
+			if(x>=line)
 			{
 				x=0;
 				y++;

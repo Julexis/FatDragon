@@ -6,8 +6,8 @@ import org.newdawn.slick.SlickException;
 //Plante qui pousse dans le jardin. Peuvent être récolter lorsque prête.
 public class Plante extends Item{
 	private grainType type;
-	private int niveauDeCompletion;
-	private int completionMax;
+	private float niveauDeCompletion;
+	private float completionMax;
 	
 	public Plante(grainType type)
 	{
@@ -45,21 +45,21 @@ public class Plante extends Item{
 	public grainType getType() {
 		return type;
 	}
-	public int getCompletionMax() {
+	public float getCompletionMax() {
 		return completionMax;
 	}
 
-	public void setCompletionMax(int completionMax) {
+	public void setCompletionMax(float completionMax) {
 		this.completionMax = completionMax;
 	}
 
 	public void setType(grainType type) {
 		this.type = type;
 	}
-	public int getNiveauDeCompletion() {
+	public float getNiveauDeCompletion() {
 		return niveauDeCompletion;
 	}
-	public void setNiveauDeCompletion(int niveauDeCompletion) {
+	public void setNiveauDeCompletion(float niveauDeCompletion) {
 		this.niveauDeCompletion = niveauDeCompletion;
 	}
 }

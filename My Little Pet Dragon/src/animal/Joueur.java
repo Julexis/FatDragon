@@ -59,7 +59,10 @@ public class Joueur extends Animal{
 		fonty = new TrueTypeFont( awtFont, false);
 		invent.addObjet(new Sceau());
 		invent.addObjet(new Legume(grainType.green));
+		invent.addObjet(new Graine(grainType.red));
 		invent.addObjet(new Graine(grainType.blue));
+		invent.addObjet(new Graine(grainType.yellow));
+		invent.addObjet(new Sceau());
 	}
 
 	public void deplacement(Input inputJoueur) {

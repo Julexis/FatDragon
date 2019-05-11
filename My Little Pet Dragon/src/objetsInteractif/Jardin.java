@@ -54,7 +54,7 @@ public class Jardin extends ObjetInteractif{
 		{
 			try {
 				Plante p=(Plante)i;
-				int comp = p.getNiveauDeCompletion()-1;
+				float comp = p.getNiveauDeCompletion()-1;
 				
 				if (comp < 0)
 				{
@@ -73,15 +73,26 @@ public class Jardin extends ObjetInteractif{
 	public void afficherPlants()
 	{
 		 ArrayList <Item> plants=inventaireJardin.getItems();
-		 int x,y,hauteurLargeur;
-		 x=120;
-		 y=120;
-		 
+		 int x,y,emplacement;
+		float hauteurLargeur;
+		 x=160;
+		 y=140;
+		 emplacement=0;
 		 for(Item i :plants)
 		 {
 			 Plante p = (Plante)i;
 			 hauteurLargeur= (p.getCompletionMax()-p.getNiveauDeCompletion())/p.getCompletionMax();
-			p.getImage().draw(x-hauteurLargeur/2,y-hauteurLargeur/2,hauteurLargeur*40,hauteurLargeur*40);
+			 hauteurLargeur*=40;
+			p.getImage().draw(x-hauteurLargeur/2,y-hauteurLargeur/2,hauteurLargeur,hauteurLargeur);
+			if(emplacement%2==0)
+			{
+				x+=40;
+			}
+			else
+			{
+				x-=40;
+				y+=40;
+			}
 		 }
 	}
 	public Inventaire getInventaireJoueur() {
