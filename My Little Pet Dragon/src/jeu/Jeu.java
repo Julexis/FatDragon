@@ -50,20 +50,22 @@ public class Jeu extends BasicGame {
 			drakeDrake.drawDragon();
 		}
 		joueur.drawMouvement();
-		joueur.drawInvent();
-		if(joueur.getListeInteractionEnCours()!=null)
-		{
-		joueur.drawOptions();
-		}
+		
 		
 		if(mapToRender==maps[MAPS.JARDIN.toInt()])
 		{
+			jardinGarden.afficherPlants();
 			if(joueur.getInvent().isAffiche())
 			{
 				jardinGarden.getInventaireJardin().Affiche();
 				
 			}
-			jardinGarden.afficherPlants();
+			
+		}
+		joueur.drawInvent();
+		if(joueur.getListeInteractionEnCours()!=null)
+		{
+		joueur.drawOptions();
 		}
 		drakeDrake.afficheLesBar();
 	}

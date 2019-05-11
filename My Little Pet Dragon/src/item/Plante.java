@@ -8,7 +8,7 @@ public class Plante extends Item{
 	private grainType type;
 	private float niveauDeCompletion;
 	private float completionMax;
-	
+	private Image imagePousser;
 	public Plante(grainType type)
 	{
 		this.type = type;//set l'image en fonction de la sorte
@@ -19,21 +19,25 @@ public class Plante extends Item{
 				niveauDeCompletion = 100;
 				completionMax=100;
 				setImage(new Image("./imagesItem/arbreJaune.png"));
+				setImagePousser(new Image("./imagesItem/applePie.png"));
 				break;
 			case blue:
 				niveauDeCompletion = 60;
 				completionMax=60;
 				setImage(new Image("./imagesItem/arbreBleu.png"));
+				setImagePousser(new Image("./imagesItem/gingerAle.png"));
 				break;
 			case red:
 				niveauDeCompletion = 75;
 				completionMax=75;
 				setImage(new Image("./imagesItem/arbreOrange.png"));
+				setImagePousser(new Image("./imagesItem/hotdog.png"));
 				break;
 			case green:
 				niveauDeCompletion = 20;
 				completionMax=20;
 				setImage(new Image("./imagesItem/arbreVert.png"));
+				setImagePousser(new Image("./imagesItem/orange.png"));
 				break;
 			} 
 		}catch (SlickException e) {
@@ -41,6 +45,14 @@ public class Plante extends Item{
 		}
 	}
 	
+	public Image getImagePousser() {
+		return imagePousser;
+	}
+
+	public void setImagePousser(Image imagePousser) {
+		this.imagePousser = imagePousser;
+	}
+
 	//getter setter
 	public grainType getType() {
 		return type;

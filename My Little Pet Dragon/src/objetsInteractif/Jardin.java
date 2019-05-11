@@ -59,7 +59,9 @@ public class Jardin extends ObjetInteractif{
 				if (comp < 0)
 				{
 					p.setNiveauDeCompletion(0);
+					p.setImage(p.getImagePousser());
 				}
+				
 				else
 				{
 					p.setNiveauDeCompletion(comp);
@@ -83,7 +85,7 @@ public class Jardin extends ObjetInteractif{
 			 Plante p = (Plante)i;
 			 hauteurLargeur= (p.getCompletionMax()-p.getNiveauDeCompletion())/p.getCompletionMax();
 			 hauteurLargeur*=40;
-			p.getImage().draw(x-hauteurLargeur/2,y-hauteurLargeur/2,hauteurLargeur,hauteurLargeur);
+			p.getImage().draw(x-(hauteurLargeur/2)/2,y-hauteurLargeur/2,hauteurLargeur/2,hauteurLargeur);
 			emplacement++;
 			if(emplacement%2==1)
 			{

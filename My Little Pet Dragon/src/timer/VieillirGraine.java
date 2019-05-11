@@ -15,6 +15,8 @@ public class VieillirGraine extends TimerEvent{
 	@Override
 	public void trigger()
 	{
+		
 		graine.Vieillir();//method de la graine qui incrémente et despawn les graines par terre
+		
 	}
 }
