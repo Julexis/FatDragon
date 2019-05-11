@@ -13,6 +13,8 @@ import timer.TimerEventGetGrainAtRandom;
 import ObjetsInteractif.*;
 import animal.Joueur;
 import animal.SpawnType;
+
+import java.awt.Font;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Jeu extends BasicGame {
@@ -28,9 +30,9 @@ public class Jeu extends BasicGame {
 	private ObjetInteractifDragon drakeDrake;
 	private ObjetInteractifJardin jardinGarden;
 	private ObjetInteractifLac lakeLake;
-	
+	private Image fondMessage;
 	private TimerEvent seedGenerator;
-	
+	private TrueTypeFont fonty;
 	public Jeu(String title) {
 		super(title);
 		
@@ -45,6 +47,18 @@ public class Jeu extends BasicGame {
 		//On affiche la map actuelle
 		mapToRender.render(0, 0);
 		//On affiche le joueur, l'inventaire et les options
+		if(drakeDrake.isDead())
+		{
+			fondMessage.draw(25,25,350,350);
+			fonty.drawString(30, 200, "Vous avez perdu :( relancez le jeu pour réassayez");
+		}
+		else if(drakeDrake.getHeight()>=drakeDrake.getmaxHeight())
+		{
+			fondMessage.draw(25,25,350,350);
+			fonty.drawString(30, 200, "Vous êtes un WINNER, votre dragon c'est maintenant un big fat dragon");
+		}
+		else
+		{
 		if(mapToRender==maps[MAPS.DRAGON.toInt()])
 		{
 			drakeDrake.drawDragon();
@@ -68,6 +82,7 @@ public class Jeu extends BasicGame {
 		joueur.drawOptions();
 		}
 		drakeDrake.afficheLesBar();
+		}
 	}
 
 	@Override
@@ -105,7 +120,9 @@ public class Jeu extends BasicGame {
 		joueur.setObjetEnCours(lakeLake);
 		//On set la liste d'interaction pour le joueur (au lac) 
 		joueur.setListeInteractionEnCours(lakeLake.getListeInteraction());
-		
+		Font awtFont = new Font("Times New Roman", Font.BOLD, 15);
+		fonty = new TrueTypeFont( awtFont, false);
+		fondMessage=new Image("./ressourceJeu/fondInventaire.png");
 	}
 
 	@Override
