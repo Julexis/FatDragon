@@ -22,10 +22,10 @@ public class Dragon extends ObjetInteractif {
 	private final int maxCleanliness = 100;
 	Image imageDragon;
 	Image[] bars;
-	private int growRate = 10;
+	private int growRate = 1;
 	private int height = 30;
 	private TimerEvent timerEvent;
-	private final int maxHeight = 200;
+	private final int maxHeight = 4200;
 	private Joueur joueur;
 	private Inventaire inventJoueur;
 
@@ -99,9 +99,9 @@ public class Dragon extends ObjetInteractif {
 		}
 
 		//Diminish hungerMeter
-		if (hungerMeter - 0.2f > 0)
+		if (hungerMeter - 4 > 0)
 		{
-			hungerMeter -= 0.2f;
+			hungerMeter -= 4;
 		}
 		else
 		{
@@ -110,9 +110,9 @@ public class Dragon extends ObjetInteractif {
 		}
 
 		//Diminish happiness
-		if (happiness - 0.1f > 0)
+		if (happiness - 6> 0)
 		{
-			happiness -= 0.1f;
+			happiness -= 6;
 		}
 		else
 		{
@@ -121,9 +121,9 @@ public class Dragon extends ObjetInteractif {
 		}
 
 		//Diminish Cleanliness
-		if (cleanliness - 0.5f > 0)
+		if (cleanliness - 5 > 0)
 		{
-			cleanliness -= 0.5f;
+			cleanliness -= 5;
 		}
 		else
 		{
@@ -167,7 +167,7 @@ public class Dragon extends ObjetInteractif {
 	}
 	public void drawDragon()
 	{
-		float size = 150*((float)height/(float)maxHeight) ;
+		float size = 100*((float)height/(float)maxHeight)+30 ;
 	    imageDragon.draw(200-size/2,200-size/2,size,size);
 	}
 	public void afficheLesBar()
