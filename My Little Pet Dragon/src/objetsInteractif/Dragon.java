@@ -173,7 +173,7 @@ public class Dragon extends ObjetInteractif {
 	{
 		//Chaque bar est afficher avec les statistiques associé et le texte aussi
 		afficheUneBar(60,10,"Faim :",hungerMeter,bars[progressBar.ROUGE.getBar()]);
-		afficheUneBar(60,30,"Propretï¿½ :",cleanliness,bars[progressBar.BLEU.getBar()]);
+		afficheUneBar(60,30,"Propreté :",cleanliness,bars[progressBar.BLEU.getBar()]);
 		afficheUneBar(60,50,"Bonheur :",happiness,bars[progressBar.JAUNE.getBar()]);
 	}
 	//Méthode pour afficher une bar
