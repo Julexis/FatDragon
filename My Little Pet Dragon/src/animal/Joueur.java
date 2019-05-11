@@ -62,6 +62,7 @@ public class Joueur extends Animal{
 		invent.addObjet(new Graine(grainType.red));
 		invent.addObjet(new Graine(grainType.blue));
 		invent.addObjet(new Graine(grainType.yellow));
+		invent.addObjet(new Graine(grainType.green));
 		invent.addObjet(new Sceau());
 	}
 

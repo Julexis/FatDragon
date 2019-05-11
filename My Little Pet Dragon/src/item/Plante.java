@@ -28,7 +28,7 @@ public class Plante extends Item{
 			case red:
 				niveauDeCompletion = 75;
 				completionMax=75;
-				setImage(new Image("./imagesItem/arbreRouge.png"));
+				setImage(new Image("./imagesItem/arbreOrange.png"));
 				break;
 			case green:
 				niveauDeCompletion = 20;

@@ -84,15 +84,17 @@ public class Jardin extends ObjetInteractif{
 			 hauteurLargeur= (p.getCompletionMax()-p.getNiveauDeCompletion())/p.getCompletionMax();
 			 hauteurLargeur*=40;
 			p.getImage().draw(x-hauteurLargeur/2,y-hauteurLargeur/2,hauteurLargeur,hauteurLargeur);
+			emplacement++;
 			if(emplacement%2==0)
 			{
-				x+=40;
+				x+=80;
 			}
 			else
 			{
-				x-=40;
-				y+=40;
+				x-=80;
+				y+=60;
 			}
+			
 		 }
 	}
 	public Inventaire getInventaireJoueur() {
