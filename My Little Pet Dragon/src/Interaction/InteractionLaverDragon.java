@@ -17,7 +17,7 @@ public class InteractionLaverDragon extends Interaction{
 	{
 		try
 		{
-			Sceau s = (Sceau)i;
+			Seau s = (Seau)i;
 			if (s.getIsFull())
 			{
 				s.empty();

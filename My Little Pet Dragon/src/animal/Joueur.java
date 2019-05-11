@@ -11,7 +11,7 @@ import ObjetsInteractif.ObjetInteractif;
 import item.Graine;
 import item.Inventaire;
 import item.Legume;
-import item.Sceau;
+import item.Seau;
 import item.grainType;
 import item.vegieType;
 public class Joueur extends Animal{
@@ -57,13 +57,8 @@ public class Joueur extends Animal{
 		//Création du fond pour la future liste d'interaction
 		Font awtFont = new Font("Times New Roman", Font.BOLD, 10);
 		fonty = new TrueTypeFont( awtFont, false);
-		invent.addObjet(new Sceau());
-		invent.addObjet(new Legume(grainType.green));
-		invent.addObjet(new Graine(grainType.red));
-		invent.addObjet(new Graine(grainType.blue));
-		invent.addObjet(new Graine(grainType.yellow));
+		invent.addObjet(new Seau());
 		invent.addObjet(new Graine(grainType.green));
-		invent.addObjet(new Sceau());
 	}
 
 	public void deplacement(Input inputJoueur) {

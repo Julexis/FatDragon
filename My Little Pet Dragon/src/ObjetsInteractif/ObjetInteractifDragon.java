@@ -149,6 +149,7 @@ public class ObjetInteractifDragon extends ObjetInteractif {
 
 	public void playWithDragon()
 	{
+		isDeadSad = false;
 		if (happiness + 35 < maxHappiness)
 		{
 			happiness += 35;
@@ -162,6 +163,7 @@ public class ObjetInteractifDragon extends ObjetInteractif {
 
 	public void washDragon()
 	{
+		isDeadDirty = false;
 		cleanliness = maxCleanliness;
 		//Dragon is tout propre :)
 	}

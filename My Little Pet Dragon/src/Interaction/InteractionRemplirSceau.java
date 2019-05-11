@@ -9,7 +9,7 @@ public class InteractionRemplirSceau extends Interaction{
 	{
 		try
 		{
-			Sceau s = (Sceau) i;
+			Seau s = (Seau) i;
 			s.fill();
 		}
 		catch (Exception e)
