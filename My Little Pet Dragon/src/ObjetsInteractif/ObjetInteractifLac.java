@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import Interaction.*;
 
 //Objet qui permet l'interaction du remplissage de sceau
-public class Lac extends ObjetInteractif {
+public class ObjetInteractifLac extends ObjetInteractif {
 
-	public Lac()
+	public ObjetInteractifLac()
 	{
-		RemplirSceau i = new RemplirSceau();
+		InteractionRemplirSceau i = new InteractionRemplirSceau();
 		
 		listeInteraction.add(i);
 	}

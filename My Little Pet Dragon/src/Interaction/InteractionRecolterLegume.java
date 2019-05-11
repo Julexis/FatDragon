@@ -1,12 +1,12 @@
 package Interaction;
-import ObjetsInteractif.Jardin;
+import ObjetsInteractif.ObjetInteractifJardin;
 import item.Item;
 import item.Plante;
 
-public class RecolterLegume extends Interaction{
-	Jardin jardin;
+public class InteractionRecolterLegume extends Interaction{
+	ObjetInteractifJardin jardin;
 
-	public RecolterLegume(Jardin jardin)
+	public InteractionRecolterLegume(ObjetInteractifJardin jardin)
 	{
 		this.jardin = jardin;
 	}

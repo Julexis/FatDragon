@@ -1,13 +1,13 @@
 package timer;
 
-import ObjetsInteractif.Dragon;
+import ObjetsInteractif.ObjetInteractifDragon;
 
 //TimerEvent qui appel la méthode pour décrémenter les barres du dragon et incrémente sa taille.
-public class VeillirDragon extends TimerEvent{
+public class TimerEventVeillirDragon extends TimerEvent{
 
-	private Dragon dragon;
+	private ObjetInteractifDragon dragon;
 	
-	public VeillirDragon(Dragon dragon)
+	public TimerEventVeillirDragon(ObjetInteractifDragon dragon)
 	{
 		super();
 		this.dragon = dragon;

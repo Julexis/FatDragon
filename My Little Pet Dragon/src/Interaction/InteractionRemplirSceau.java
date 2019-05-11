@@ -2,7 +2,7 @@ package Interaction;
 
 import item.*;
 
-public class RemplirSceau extends Interaction{
+public class InteractionRemplirSceau extends Interaction{
 	
 	@Override
 	public void run(Item i)

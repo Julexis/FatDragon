@@ -3,11 +3,11 @@ package Interaction;
 import ObjetsInteractif.*;
 import item.*;
 
-public class LaverDragon extends Interaction{
+public class InteractionLaverDragon extends Interaction{
 
-	Dragon dragon;
+	ObjetInteractifDragon dragon;
 	
-	public LaverDragon(Dragon o)
+	public InteractionLaverDragon(ObjetInteractifDragon o)
 	{
 		dragon = o;
 	}

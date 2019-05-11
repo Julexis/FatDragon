@@ -2,7 +2,7 @@ package ObjetsInteractif;
 
 import item.*;
 import timer.TimerEvent;
-import timer.VeillirDragon;
+import timer.TimerEventVeillirDragon;
 
 import java.awt.Font;
 
@@ -13,7 +13,7 @@ import org.newdawn.slick.TrueTypeFont;
 import Interaction.*;
 import animal.Joueur;
 
-public class Dragon extends ObjetInteractif {
+public class ObjetInteractifDragon extends ObjetInteractif {
 	private float hungerMeter = 100;//100 is full and 0 is dead
 	private final int maxHunger = 100;
 	private float happiness = 100;
@@ -33,16 +33,16 @@ public class Dragon extends ObjetInteractif {
 	private boolean isDeadSad = false;
 	private boolean isDeadDirty = false;
 	private TrueTypeFont fonty;
-	public Dragon(Joueur joueur)
+	public ObjetInteractifDragon(Joueur joueur)
 	{
 		//On rajoute l'event pour faire vieillir le dragon  en fonction du timer
-		timerEvent = new VeillirDragon(this);
+		timerEvent = new TimerEventVeillirDragon(this);
 		
 		bars=new Image[3];
 		//Rajout des interactions associé 
-		listeInteraction.add(new NourrirDragon(this));
-		listeInteraction.add(new JouerAvecDragon(this));
-		listeInteraction.add(new LaverDragon(this));
+		listeInteraction.add(new InteractionNourrirDragon(this));
+		listeInteraction.add(new InteractionJouerAvecDragon(this));
+		listeInteraction.add(new InteractionLaverDragon(this));
 		inventJoueur=joueur.getInvent();
 		//Création des images pour le dragon et pour les magnifique bar de couleur
 		try {

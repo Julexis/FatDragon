@@ -7,9 +7,9 @@ import java.util.logging.Logger;
 import org.newdawn.slick.*;
 import org.newdawn.slick.tiled.TiledMap;
 
-import timer.SpawnStuff;
 import timer.Timer;
 import timer.TimerEvent;
+import timer.TimerEventGetGrainAtRandom;
 import ObjetsInteractif.*;
 import animal.Joueur;
 import animal.SpawnType;
@@ -25,11 +25,11 @@ public class Jeu extends BasicGame {
 	private int tileSize;
 	private int hauteur;
 	private int largeur;
-	private Dragon drakeDrake;
-	private Jardin jardinGarden;
-	private Lac lakeLake;
+	private ObjetInteractifDragon drakeDrake;
+	private ObjetInteractifJardin jardinGarden;
+	private ObjetInteractifLac lakeLake;
 	
-	private TimerEvent timerEvent;
+	private TimerEvent seedGenerator;
 	
 	public Jeu(String title) {
 		super(title);
@@ -75,10 +75,10 @@ public class Jeu extends BasicGame {
 		//Création du joueur
 		this.joueur=new Joueur(5, 16, 0.2f, 16);
 		//Création des objet à intéragir
-		timerEvent = new SpawnStuff(this);
-		drakeDrake=new Dragon(joueur);
-		lakeLake=new Lac();
-		jardinGarden=new Jardin(joueur.getInvent());
+		seedGenerator = new TimerEventGetGrainAtRandom(joueur.getInvent());
+		drakeDrake=new ObjetInteractifDragon(joueur);
+		lakeLake=new ObjetInteractifLac();
+		jardinGarden=new ObjetInteractifJardin(joueur.getInvent());
 		//Tableau des 4 maps
 		joueur.setInventJardin(jardinGarden.getInventaireJardin());
 		maps=new TiledMap[4];

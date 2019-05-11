@@ -3,11 +3,11 @@ package Interaction;
 import item.*;
 import ObjetsInteractif.*;
 
-public class PlanterGraine extends Interaction{
+public class InteractionPlanterGraine extends Interaction{
 	
-	Jardin jardin;
+	ObjetInteractifJardin jardin;
 
-	public PlanterGraine(Jardin jardin)
+	public InteractionPlanterGraine(ObjetInteractifJardin jardin)
 	{
 		this.jardin = jardin;
 	}
