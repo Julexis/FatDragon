@@ -99,9 +99,9 @@ public class Dragon extends ObjetInteractif {
 		}
 
 		//Diminish hungerMeter
-		if (hungerMeter - 4 > 0)
+		if (hungerMeter - 1.5 > 0)
 		{
-			hungerMeter -= 4;
+			hungerMeter -= 1.5;
 		}
 		else
 		{
